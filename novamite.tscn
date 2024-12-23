@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://dekk8efkxa2at"]
+
+[ext_resource type="Texture2D" uid="uid://fytdtkxil0ag" path="res://sprites/novamiteplaceholder.png" id="1_c074c"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l8f1s"]
+atlas = ExtResource("1_c074c")
+region = Rect2(0, 0, 45, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f26ta"]
+atlas = ExtResource("1_c074c")
+region = Rect2(45, 0, 45, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c6b3g"]
+atlas = ExtResource("1_c074c")
+region = Rect2(90, 0, 45, 45)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2ul70"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l8f1s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f26ta")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c6b3g")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="placeholdernovamite" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_2ul70")
+autoplay = "default"

@@ -1,0 +1,151 @@
+[gd_scene load_steps=21 format=3 uid="uid://dwbp4j5f50gen"]
+
+[ext_resource type="Texture2D" uid="uid://dyrdrhupgfj2" path="res://sprites/actbarplaceholder.png" id="1_7d3gb"]
+[ext_resource type="Texture2D" uid="uid://bsgxknvc030d3" path="res://sprites/starbitspriteframesplaceholder.png" id="2_to7hs"]
+[ext_resource type="Script" path="res://actionbar.gd" id="2_v8yd8"]
+[ext_resource type="Texture2D" uid="uid://7q5koc2d3kbe" path="res://sprites/iconplaceholderunpressed.png" id="3_m84qn"]
+[ext_resource type="Texture2D" uid="uid://fytdtkxil0ag" path="res://sprites/novamiteplaceholder.png" id="5_ght8b"]
+[ext_resource type="Texture2D" uid="uid://4i08f0s7n7c7" path="res://sprites/1x1transparentpixel.png" id="5_hnbwx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a3bx3"]
+atlas = ExtResource("2_to7hs")
+region = Rect2(45, 0, 45, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i8hr0"]
+atlas = ExtResource("2_to7hs")
+region = Rect2(90, 0, 45, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2trbq"]
+atlas = ExtResource("2_to7hs")
+region = Rect2(135, 0, 45, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yalvt"]
+atlas = ExtResource("2_to7hs")
+region = Rect2(180, 0, 45, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_47dx7"]
+atlas = ExtResource("2_to7hs")
+region = Rect2(225, 0, 45, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dwm7j"]
+atlas = ExtResource("2_to7hs")
+region = Rect2(270, 0, 45, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sm5eb"]
+atlas = ExtResource("2_to7hs")
+region = Rect2(315, 0, 45, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0rtp0"]
+atlas = ExtResource("2_to7hs")
+region = Rect2(360, 0, 45, 45)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xegii"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a3bx3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i8hr0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2trbq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yalvt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_47dx7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dwm7j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sm5eb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0rtp0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fuwwl"]
+atlas = ExtResource("5_hnbwx")
+region = Rect2(0, 0, 1, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xqfrf"]
+atlas = ExtResource("5_ght8b")
+region = Rect2(0, 0, 45, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_856wr"]
+atlas = ExtResource("5_ght8b")
+region = Rect2(45, 0, 45, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nk3q0"]
+atlas = ExtResource("5_ght8b")
+region = Rect2(90, 0, 45, 45)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g0fau"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fuwwl")
+}],
+"loop": true,
+"name": &"none",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xqfrf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_856wr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nk3q0")
+}],
+"loop": true,
+"name": &"novamite",
+"speed": 5.0
+}]
+
+[node name="Actbarplaceholder" type="Node2D"]
+script = ExtResource("2_v8yd8")
+
+[node name="starbitprogress" type="AnimatedSprite2D" parent="."]
+position = Vector2(-217, -8)
+scale = Vector2(1.02222, 0.666667)
+sprite_frames = SubResource("SpriteFrames_xegii")
+
+[node name="starbitcount" type="Label" parent="."]
+offset_left = -237.0
+offset_top = 5.0
+offset_right = -198.0
+offset_bottom = 28.0
+text = "11"
+horizontal_alignment = 1
+
+[node name="button1" type="Button" parent="."]
+offset_left = -193.0
+offset_top = -29.0
+offset_right = -140.0
+offset_bottom = 24.0
+icon = ExtResource("3_m84qn")
+
+[node name="starbittimer" type="Timer" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+texture = ExtResource("1_7d3gb")
+
+[node name="mousefollow" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_g0fau")
+animation = &"none"
+
+[connection signal="pressed" from="button1" to="." method="_on_button_1_pressed"]
+[connection signal="timeout" from="starbittimer" to="." method="_on_starbittimer_timeout"]

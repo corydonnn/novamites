@@ -1,0 +1,32 @@
+[gd_scene load_steps=7 format=3 uid="uid://7i54y5t3n5ps"]
+
+[ext_resource type="Script" path="res://playarea.gd" id="1_hg262"]
+[ext_resource type="PackedScene" uid="uid://dwbp4j5f50gen" path="res://actionbar.tscn" id="2_8a2ci"]
+[ext_resource type="PackedScene" uid="uid://dekk8efkxa2at" path="res://novamite.tscn" id="2_cu101"]
+[ext_resource type="Texture2D" uid="uid://dpkofpsygv2c8" path="res://sprites/tilemapplaceholder.png" id="4_gl6e1"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j7rpw"]
+texture = ExtResource("4_gl6e1")
+texture_region_size = Vector2i(45, 45)
+0:0/0 = 0
+1:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_aokb7"]
+tile_size = Vector2i(45, 45)
+sources/0 = SubResource("TileSetAtlasSource_j7rpw")
+
+[node name="playarea" type="Node2D"]
+script = ExtResource("1_hg262")
+novamite = ExtResource("2_cu101")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Actbarplaceholder" parent="." instance=ExtResource("2_8a2ci")]
+position = Vector2(0, -113)
+
+[node name="TileMap" type="TileMap" parent="."]
+z_index = -1
+position = Vector2(-15, 0)
+tile_set = SubResource("TileSet_aokb7")
+format = 2
+layer_0/tile_data = PackedInt32Array(-65541, 0, 0, -4, 0, 0, -65539, 0, 0, -2, 0, 0, -65537, 0, 0, -65536, 0, 0, -131071, 0, 0, -65534, 0, 0, -131069, 0, 0, -65532, 0, 0, -131067, 0, 0, 65531, 0, 0, 131068, 0, 0, 196603, 0, 0, 196605, 0, 0, 65533, 0, 0, 131070, 0, 0, 65535, 0, 0, 196607, 0, 0, 65536, 0, 0, 1, 0, 0, 131073, 0, 0, 65538, 0, 0, 3, 0, 0, 131075, 0, 0, 65540, 0, 0, 131077, 0, 0, 5, 0, 0, -65540, 65536, 0, -3, 65536, 0, -5, 65536, 0, 65532, 65536, 0, 131067, 65536, 0, 196604, 65536, 0, 131069, 65536, 0, 196606, 65536, 0, 131071, 65536, 0, 65534, 65536, 0, -1, 65536, 0, -65538, 65536, 0, -131072, 65536, 0, 0, 65536, 0, -65535, 65536, 0, -131070, 65536, 0, -65533, 65536, 0, 2, 65536, 0, 4, 65536, 0, 65539, 65536, 0, 131074, 65536, 0, 131076, 65536, 0, 65541, 65536, 0, -65531, 65536, 0, -131068, 65536, 0, 131072, 65536, 0, 65537, 65536, 0)

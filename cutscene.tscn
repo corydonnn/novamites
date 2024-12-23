@@ -1,0 +1,86 @@
+[gd_scene load_steps=11 format=3 uid="uid://ikomg1shncqt"]
+
+[ext_resource type="Texture2D" uid="uid://bipqywux16k2s" path="res://sprites/cutscene images/phadriusinspace.png" id="1_v5ee4"]
+[ext_resource type="Texture2D" uid="uid://dkcfvob68awf2" path="res://sprites/cutscene images/towerinsarcolo.png" id="1_yypni"]
+[ext_resource type="Texture2D" uid="uid://bi20axqikxg5w" path="res://sprites/cutscene images/sarcoloinspace.png" id="2_hhx1h"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n4d1q"]
+atlas = ExtResource("1_v5ee4")
+region = Rect2(0, 0, 480, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mutss"]
+atlas = ExtResource("1_v5ee4")
+region = Rect2(480, 0, 480, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3lyvu"]
+atlas = ExtResource("1_v5ee4")
+region = Rect2(960, 0, 480, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rgobn"]
+atlas = ExtResource("1_v5ee4")
+region = Rect2(1440, 0, 480, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u1tsj"]
+atlas = ExtResource("2_hhx1h")
+region = Rect2(0, 0, 480, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1bma1"]
+atlas = ExtResource("1_yypni")
+region = Rect2(0, 0, 480, 270)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fg2ax"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n4d1q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mutss")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3lyvu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rgobn")
+}],
+"loop": true,
+"name": &"phadriusinspace",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u1tsj")
+}],
+"loop": true,
+"name": &"sarcoloinspace",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1bma1")
+}],
+"loop": true,
+"name": &"towerofsarcolo",
+"speed": 5.0
+}]
+
+[node name="cutscene" type="CanvasLayer"]
+follow_viewport_enabled = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_fg2ax")
+animation = &"sarcoloinspace"
+autoplay = "phadriusinspace"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Label" type="Label" parent="."]
+offset_left = -221.0
+offset_top = -129.0
+offset_right = 238.0
+offset_bottom = -87.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 16
+text = "who are we to defy providence?"
+horizontal_alignment = 1
