@@ -1,0 +1,61 @@
+[gd_scene load_steps=8 format=3 uid="uid://cqv3vkpha8umo"]
+
+[ext_resource type="Texture2D" uid="uid://ddbhucoivih6k" path="res://sprites/channelerplaceholder.png" id="1_i2d4u"]
+[ext_resource type="Script" path="res://channeler.gd" id="1_u8lyb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rqvxr"]
+atlas = ExtResource("1_i2d4u")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ljgwn"]
+atlas = ExtResource("1_i2d4u")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gpekc"]
+atlas = ExtResource("1_i2d4u")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hrwwb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rqvxr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ljgwn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gpekc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2vabx"]
+size = Vector2(22, 36)
+
+[node name="channeler" type="Node2D"]
+script = ExtResource("1_u8lyb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_hrwwb")
+autoplay = "default"
+frame_progress = 0.665527
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_2vabx")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = -22.0
+offset_top = -2.0
+offset_right = 27.0
+offset_bottom = 21.0
+text = "debug"
+horizontal_alignment = 1
+
+[connection signal="tree_exited" from="." to="." method="_on_tree_exited"]

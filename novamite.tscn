@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://dekk8efkxa2at"]
+[gd_scene load_steps=8 format=3 uid="uid://dekk8efkxa2at"]
 
 [ext_resource type="Texture2D" uid="uid://fytdtkxil0ag" path="res://sprites/novamiteplaceholder.png" id="1_c074c"]
+[ext_resource type="Script" path="res://novamite.gd" id="1_vjbno"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l8f1s"]
 atlas = ExtResource("1_c074c")
@@ -31,8 +32,27 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6nqd0"]
+size = Vector2(41, 33)
+
 [node name="placeholdernovamite" type="Node2D"]
+script = ExtResource("1_vjbno")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_2ul70")
 autoplay = "default"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.5, 1.5)
+shape = SubResource("RectangleShape2D_6nqd0")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = -22.0
+offset_top = -2.0
+offset_right = 27.0
+offset_bottom = 21.0
+text = "debug"
+horizontal_alignment = 1

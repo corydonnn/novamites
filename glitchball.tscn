@@ -1,0 +1,57 @@
+[gd_scene load_steps=9 format=3 uid="uid://xb1tvvpw4xwg"]
+
+[ext_resource type="Texture2D" uid="uid://bi1o53em6njdu" path="res://sprites/glitchball.png" id="1_6c17i"]
+[ext_resource type="Script" path="res://glitchball.gd" id="1_m758n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jkck7"]
+atlas = ExtResource("1_6c17i")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_usk5t"]
+atlas = ExtResource("1_6c17i")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_illyl"]
+atlas = ExtResource("1_6c17i")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hym5q"]
+atlas = ExtResource("1_6c17i")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qxjjv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jkck7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_usk5t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_illyl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hym5q")
+}],
+"loop": true,
+"name": &"default",
+"speed": 18.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ksd3x"]
+
+[node name="glitchball" type="Area2D"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_m758n")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_qxjjv")
+autoplay = "default"
+frame_progress = 0.416547
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ksd3x")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

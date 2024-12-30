@@ -1,75 +1,87 @@
-[gd_scene load_steps=21 format=3 uid="uid://dwbp4j5f50gen"]
+[gd_scene load_steps=29 format=3 uid="uid://dwbp4j5f50gen"]
 
 [ext_resource type="Texture2D" uid="uid://dyrdrhupgfj2" path="res://sprites/actbarplaceholder.png" id="1_7d3gb"]
-[ext_resource type="Texture2D" uid="uid://bsgxknvc030d3" path="res://sprites/starbitspriteframesplaceholder.png" id="2_to7hs"]
 [ext_resource type="Script" path="res://actionbar.gd" id="2_v8yd8"]
-[ext_resource type="Texture2D" uid="uid://7q5koc2d3kbe" path="res://sprites/iconplaceholderunpressed.png" id="3_m84qn"]
+[ext_resource type="Texture2D" uid="uid://c1vcb71wswkln" path="res://sprites/channelericon.png" id="3_8ri0v"]
+[ext_resource type="Texture2D" uid="uid://bbm1rsanqker3" path="res://sprites/glitchwurmicon.png" id="3_lo08i"]
+[ext_resource type="Texture2D" uid="uid://b8xtyti37ra6l" path="res://sprites/novamiteicon.png" id="4_qcssk"]
+[ext_resource type="Texture2D" uid="uid://ddbhucoivih6k" path="res://sprites/channelerplaceholder.png" id="5_fwnki"]
 [ext_resource type="Texture2D" uid="uid://fytdtkxil0ag" path="res://sprites/novamiteplaceholder.png" id="5_ght8b"]
 [ext_resource type="Texture2D" uid="uid://4i08f0s7n7c7" path="res://sprites/1x1transparentpixel.png" id="5_hnbwx"]
+[ext_resource type="Texture2D" uid="uid://dt6hqup2av0rd" path="res://sprites/gitchwurm.png" id="6_q2hyv"]
+[ext_resource type="Texture2D" uid="uid://c7n8ptddx4ic8" path="res://sprites/progempty.png" id="9_yw5fy"]
+[ext_resource type="Texture2D" uid="uid://y8w84wfysm0s" path="res://sprites/progfull.png" id="10_imhpn"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_a3bx3"]
-atlas = ExtResource("2_to7hs")
-region = Rect2(45, 0, 45, 45)
+[sub_resource type="AtlasTexture" id="AtlasTexture_mthke"]
+atlas = ExtResource("3_8ri0v")
+region = Rect2(0, 0, 45, 45)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_i8hr0"]
-atlas = ExtResource("2_to7hs")
-region = Rect2(90, 0, 45, 45)
+[sub_resource type="AtlasTexture" id="AtlasTexture_oblr8"]
+atlas = ExtResource("3_lo08i")
+region = Rect2(0, 0, 48, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2trbq"]
-atlas = ExtResource("2_to7hs")
-region = Rect2(135, 0, 45, 45)
+[sub_resource type="AtlasTexture" id="AtlasTexture_tnvlr"]
+atlas = ExtResource("4_qcssk")
+region = Rect2(0, 0, 45, 45)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_yalvt"]
-atlas = ExtResource("2_to7hs")
-region = Rect2(180, 0, 45, 45)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_47dx7"]
-atlas = ExtResource("2_to7hs")
-region = Rect2(225, 0, 45, 45)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dwm7j"]
-atlas = ExtResource("2_to7hs")
-region = Rect2(270, 0, 45, 45)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_sm5eb"]
-atlas = ExtResource("2_to7hs")
-region = Rect2(315, 0, 45, 45)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0rtp0"]
-atlas = ExtResource("2_to7hs")
-region = Rect2(360, 0, 45, 45)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_xegii"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_54gbc"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_a3bx3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_i8hr0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2trbq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_yalvt")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_47dx7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dwm7j")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_sm5eb")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0rtp0")
+"texture": SubResource("AtlasTexture_mthke")
 }],
 "loop": true,
-"name": &"default",
-"speed": 8.0
+"name": &"channeler",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oblr8")
+}],
+"loop": true,
+"name": &"glitchwurm",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tnvlr")
+}],
+"loop": true,
+"name": &"novamite",
+"speed": 5.0
 }]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1bsgw"]
+atlas = ExtResource("5_fwnki")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y41y1"]
+atlas = ExtResource("5_fwnki")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4byru"]
+atlas = ExtResource("5_fwnki")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gjh3i"]
+atlas = ExtResource("6_q2hyv")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kiuln"]
+atlas = ExtResource("6_q2hyv")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vvien"]
+atlas = ExtResource("6_q2hyv")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qkxvl"]
+atlas = ExtResource("6_q2hyv")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ctywo"]
+atlas = ExtResource("6_q2hyv")
+region = Rect2(192, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fuwwl"]
 atlas = ExtResource("5_hnbwx")
@@ -89,6 +101,40 @@ region = Rect2(90, 0, 45, 45)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g0fau"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1bsgw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y41y1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4byru")
+}],
+"loop": true,
+"name": &"channeler",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gjh3i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kiuln")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vvien")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qkxvl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ctywo")
+}],
+"loop": true,
+"name": &"glitchwurm",
+"speed": 10.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fuwwl")
@@ -115,12 +161,8 @@ animations = [{
 [node name="Actbarplaceholder" type="Node2D"]
 script = ExtResource("2_v8yd8")
 
-[node name="starbitprogress" type="AnimatedSprite2D" parent="."]
-position = Vector2(-217, -8)
-scale = Vector2(1.02222, 0.666667)
-sprite_frames = SubResource("SpriteFrames_xegii")
-
 [node name="starbitcount" type="Label" parent="."]
+z_index = 1
 offset_left = -237.0
 offset_top = 5.0
 offset_right = -198.0
@@ -129,23 +171,70 @@ text = "11"
 horizontal_alignment = 1
 
 [node name="button1" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
 offset_left = -193.0
 offset_top = -29.0
 offset_right = -140.0
 offset_bottom = 24.0
-icon = ExtResource("3_m84qn")
+theme_override_colors/font_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 0)
+metadata/_edit_group_ = true
 
-[node name="starbittimer" type="Timer" parent="."]
+[node name="slot1sprite" type="AnimatedSprite2D" parent="button1"]
+position = Vector2(26, 29)
+sprite_frames = SubResource("SpriteFrames_54gbc")
+animation = &"channeler"
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="button2" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -139.0
+offset_top = -27.0
+offset_right = -86.0
+offset_bottom = 26.0
+metadata/_edit_group_ = true
+
+[node name="slot2sprite" type="AnimatedSprite2D" parent="button2"]
+position = Vector2(27, 26)
+sprite_frames = SubResource("SpriteFrames_54gbc")
+animation = &"novamite"
+
+[node name="button3" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -82.0
+offset_top = -27.0
+offset_right = -29.0
+offset_bottom = 26.0
+metadata/_edit_group_ = true
+
+[node name="slot3sprite" type="AnimatedSprite2D" parent="button3"]
+position = Vector2(27, 26)
+sprite_frames = SubResource("SpriteFrames_54gbc")
+animation = &"glitchwurm"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 z_index = -1
 texture = ExtResource("1_7d3gb")
 
 [node name="mousefollow" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_g0fau")
-animation = &"none"
+animation = &"glitchwurm"
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+offset_left = -240.0
+offset_top = -22.0
+offset_right = -195.0
+offset_bottom = 23.0
+step = 0.0
+fill_mode = 4
+texture_under = ExtResource("9_yw5fy")
+texture_progress = ExtResource("10_imhpn")
 
 [connection signal="pressed" from="button1" to="." method="_on_button_1_pressed"]
-[connection signal="timeout" from="starbittimer" to="." method="_on_starbittimer_timeout"]
+[connection signal="pressed" from="button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="button3" to="." method="_on_button_3_pressed"]
