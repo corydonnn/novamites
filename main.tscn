@@ -13,4 +13,4 @@ script = ExtResource("1_3i48s")
 position = Vector2(16, 0)
 
 [node name="Placeholderenemy" parent="." instance=ExtResource("3_v7g02")]
-position = Vector2(274, -68)
+position = Vector2(94, 31)

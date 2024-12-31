@@ -6,7 +6,7 @@ var mite
 # Called when the node enters the scene tree for the first time.
 
 func _ready():
-	pass # Replace with function body.
+	Globalvars.lane1spawnpos = $lane1.position
 	
 func gettiledata(tile_map, tile_mouse_pos, custom_data_layer, layer): #function that checks for specific custom data on a layer
 	var tile_data : TileData = tile_map.get_cell_tile_data(layer, tile_mouse_pos)
