@@ -3,8 +3,9 @@
 [ext_resource type="Script" path="res://sounds handler.gd" id="1_1xby5"]
 [ext_resource type="AudioStream" uid="uid://d0v3bhxlxu4xx" path="res://sfx/glitch-sound-fx-pack-04-118236.mp3" id="2_j17h5"]
 
-[node name="sounds handler" type="Node"]
+[node name="sounds_handler" type="Node"]
 script = ExtResource("1_1xby5")
 
 [node name="glitch_hit" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_j17h5")
+volume_db = -15.0

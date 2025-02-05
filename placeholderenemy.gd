@@ -5,11 +5,9 @@ var is_attacking = false
 @onready var anim = $AnimatedSprite2D
 @onready var label = $Label
 var health = 100
-@onready var lane :int = 2
+@onready var lane :int
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	global_position.x = Globalvars.camerapos.x+240
-	global_position.y = Globalvars.lane1spawnpos.y + Globalvars.tilesize * (lane - 1)
 	if Globalvars.debughealthllabels == true:
 		label.show()
 

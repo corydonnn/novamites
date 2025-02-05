@@ -14,5 +14,7 @@ func _process(delta):
 func _on_area_entered(area):
 	area.health-=damage
 	area.position.x += 60
-	get_tree().get_root().get_node("./sounds handler").glich_hit.play()
+	var hitsound = get_tree().get_root().get_node("main/sounds_handler").glitch_hit
+	hitsound.pitch_scale = randf_range(.8,1.2)
+	hitsound.play()
 	queue_free()

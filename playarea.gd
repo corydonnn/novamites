@@ -1,5 +1,6 @@
 extends Node2D
 @export var novamite :PackedScene
+@onready var enemy0 = preload("res://placeholderenemy.tscn")
 @onready var occupancy_map = $occupancy_map
 
 var mite
@@ -7,13 +8,23 @@ var mite
 
 func _ready():
 	Globalvars.lane1spawnpos = $lane1.position
-	
+	spawnenemy(0, enemy0)
+	spawnenemy(1, enemy0)
+	spawnenemy(2, enemy0)
+	spawnenemy(3, enemy0)
+	spawnenemy(4, enemy0)
 func gettiledata(tile_map, tile_mouse_pos, custom_data_layer, layer): #function that checks for specific custom data on a layer
 	var tile_data : TileData = tile_map.get_cell_tile_data(layer, tile_mouse_pos)
 	if tile_data:
 		return tile_data.get_custom_data(custom_data_layer)
 	else:
 		return false
+
+func spawnenemy(lane, type):
+	var enemy = type.instantiate()
+	enemy.global_position.x = Globalvars.lane1spawnpos.x
+	enemy.global_position.y = Globalvars.lane1spawnpos.y + Globalvars.tilesize * (lane)
+	add_child(enemy)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
