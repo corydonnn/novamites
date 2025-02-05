@@ -178,10 +178,8 @@ script = ExtResource("1_wtynm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_4jbwm")
-animation = &"shoot"
+animation = &"idle"
 autoplay = "idle"
-frame = 6
-frame_progress = 0.254231
 
 [node name="Marker2D" type="Marker2D" parent="."]
 
