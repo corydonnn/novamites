@@ -26,6 +26,9 @@ func _process(delta):
 
 func shoot():
 	$actiontimer.start()
+	var hitsound = get_tree().get_root().get_node("main/sounds_handler").glitch_shoot
+	hitsound.pitch_scale = randf_range(.9,1.1)
+	hitsound.play()
 	canshoot = false
 	var glitchball = preload('res://glitchball.tscn').instantiate()
 	anim.play("shoot")

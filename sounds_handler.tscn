@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bv5lfn1tyh7k3"]
+[gd_scene load_steps=4 format=3 uid="uid://bv5lfn1tyh7k3"]
 
 [ext_resource type="Script" path="res://sounds handler.gd" id="1_1xby5"]
 [ext_resource type="AudioStream" uid="uid://d0v3bhxlxu4xx" path="res://sfx/glitch-sound-fx-pack-04-118236.mp3" id="2_j17h5"]
+[ext_resource type="AudioStream" uid="uid://cbs6435k6ftqk" path="res://sfx/ffftpah.mp3" id="3_i31md"]
 
 [node name="sounds_handler" type="Node"]
 script = ExtResource("1_1xby5")
@@ -9,3 +10,8 @@ script = ExtResource("1_1xby5")
 [node name="glitch_hit" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_j17h5")
 volume_db = -15.0
+max_polyphony = 20
+
+[node name="glitch_shoot" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_i31md")
+max_polyphony = 20
