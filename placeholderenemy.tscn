@@ -189,6 +189,7 @@ animations = [{
 size = Vector2(47, 35)
 
 [node name="Placeholderenemy" type="Area2D"]
+scale = Vector2(0.8, 0.8)
 collision_layer = 2
 script = ExtResource("1_1pj8d")
 

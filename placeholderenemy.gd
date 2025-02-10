@@ -1,5 +1,5 @@
 extends Area2D
-var speed = 25
+var speed = 15
 @onready var raycast = $RayCast2D
 var is_attacking = false
 @onready var anim = $AnimatedSprite2D

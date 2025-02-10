@@ -39,6 +39,8 @@ func _process(_delta):
 				mite = preload('res://novamite.tscn').instantiate() #assigns a instantiation as a variable
 			if Globalvars.held == 'glitchwurm':
 				mite = preload("res://glitchwurm.tscn").instantiate()
+			if Globalvars.held == 'shooter':
+				mite = preload("res://shooter_placeholder.tscn").instantiate()
 			add_child(mite) #adds said variable as a child
 			mite.position = occupancy_map.map_to_local(tilepos)
 			occupancy_map.set_cell(0,tilepos,0, Vector2(0,0))
