@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://yjyg2mvxkxed"]
+
+[ext_resource type="Texture2D" uid="uid://d3vi3r87jsfkl" path="res://sprites/titlescreen_giga_placeholder.png" id="1_bisgc"]
+[ext_resource type="Script" path="res://title_screen.gd" id="1_tvscq"]
+[ext_resource type="Texture2D" uid="uid://bucoumx4its6d" path="res://sprites/lmao.png" id="3_odwj1"]
+[ext_resource type="Texture2D" uid="uid://b1ifctmux7t4p" path="res://sprites/lmao2.png" id="4_hhs0a"]
+
+[node name="title_screen" type="CanvasLayer"]
+script = ExtResource("1_tvscq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(240.5, 135)
+scale = Vector2(0.665278, 0.558333)
+texture = ExtResource("1_bisgc")
+
+[node name="playbutton" type="TextureButton" parent="."]
+offset_left = 289.0
+offset_top = 60.0
+offset_right = 451.0
+offset_bottom = 99.0
+texture_normal = ExtResource("3_odwj1")
+texture_hover = ExtResource("4_hhs0a")
+ignore_texture_size = true
+stretch_mode = 0
+
+[connection signal="pressed" from="playbutton" to="." method="_on_playbutton_pressed"]

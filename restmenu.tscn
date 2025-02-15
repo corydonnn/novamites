@@ -1,0 +1,81 @@
+[gd_scene load_steps=6 format=3 uid="uid://v644plrj2tvj"]
+
+[ext_resource type="Script" path="res://restmenu.gd" id="1_67f1v"]
+[ext_resource type="Texture2D" uid="uid://ckv80pr6g8p57" path="res://sprites/spinnercenter.png" id="2_mf57v"]
+[ext_resource type="Texture2D" uid="uid://b2vwqujvwi40" path="res://sprites/starbit_needle.png" id="3_l4aob"]
+[ext_resource type="Shader" path="res://shimmer.gdshader" id="3_o1vnp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yiwsb"]
+shader = ExtResource("3_o1vnp")
+shader_parameter/Line_Smoothness = 0.045
+shader_parameter/Line_Width = 0.09
+shader_parameter/Brightness = 3.0
+shader_parameter/Rotation_deg = 30.0
+shader_parameter/Distortion = 1.8
+shader_parameter/Speed = 0.7
+shader_parameter/Position = 0.0
+shader_parameter/Position_Min = 0.25
+shader_parameter/Position_Max = 0.5
+shader_parameter/Alpha = 1.0
+
+[node name="restmenu" type="Node2D"]
+script = ExtResource("1_67f1v")
+
+[node name="bg" type="Sprite2D" parent="."]
+clip_children = 2
+position = Vector2(240, 138)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_mf57v")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(235, 139)
+rotation = -0.785398
+scale = Vector2(0.3, 0.3)
+
+[node name="needle" type="Sprite2D" parent="."]
+clip_children = 2
+position = Vector2(235, 139)
+rotation = -0.785398
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_l4aob")
+
+[node name="ColorRect" type="ColorRect" parent="needle"]
+material = SubResource("ShaderMaterial_yiwsb")
+offset_left = -202.0
+offset_top = -50.0
+offset_right = 200.0
+offset_bottom = 40.0
+
+[node name="right" type="TextureButton" parent="."]
+offset_left = 319.0
+offset_top = 115.0
+offset_right = 359.0
+offset_bottom = 155.0
+
+[node name="top" type="TextureButton" parent="."]
+offset_left = 214.0
+offset_top = 21.0
+offset_right = 254.0
+offset_bottom = 61.0
+
+[node name="bottom" type="TextureButton" parent="."]
+offset_left = 214.0
+offset_top = 206.0
+offset_right = 254.0
+offset_bottom = 246.0
+
+[node name="left" type="TextureButton" parent="."]
+offset_left = 114.0
+offset_top = 119.0
+offset_right = 154.0
+offset_bottom = 159.0
+
+[node name="Marker2D2" type="Marker2D" parent="."]
+position = Vector2(324, 59)
+
+[connection signal="mouse_entered" from="right" to="." method="_on_right_mouse_entered"]
+[connection signal="mouse_entered" from="top" to="." method="_on_top_mouse_entered"]
+[connection signal="mouse_exited" from="top" to="." method="_on_buttons_exited"]
+[connection signal="mouse_entered" from="bottom" to="." method="_on_bottom_mouse_entered"]
+[connection signal="mouse_exited" from="bottom" to="." method="_on_buttons_exited"]
+[connection signal="mouse_entered" from="left" to="." method="_on_left_mouse_entered"]

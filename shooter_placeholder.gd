@@ -28,13 +28,13 @@ func _process(delta):
 func shoot():
 	$actiontimer.start()
 	#handles sound effects
-	#var hitsound = get_tree().get_root().get_node("main/sounds_handler").glitch_shoot
-	#hitsound.pitch_scale = randf_range(.9,1.1)
-	#hitsound.play()
+	var hitsound = get_tree().get_root().get_node("main/sounds_handler").gunshot
+	hitsound.pitch_scale = randf_range(.9,1.2)
 	canshoot = false
 	var bullet = preload('res://bullet.tscn').instantiate()
 	anim.play("shoot")
-	await get_tree().create_timer(.15).timeout
+	await get_tree().create_timer(.2).timeout
+	hitsound.play()
 	add_child(bullet)
 	bullet.position = marker_2d.position
 	await get_tree().create_timer(.9).timeout

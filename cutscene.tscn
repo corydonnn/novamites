@@ -1,5 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://ikomg1shncqt"]
+[gd_scene load_steps=12 format=3 uid="uid://ikomg1shncqt"]
 
+[ext_resource type="Script" path="res://cutscene.gd" id="1_08lot"]
 [ext_resource type="Texture2D" uid="uid://bipqywux16k2s" path="res://sprites/cutscene images/phadriusinspace.png" id="1_v5ee4"]
 [ext_resource type="Texture2D" uid="uid://dkcfvob68awf2" path="res://sprites/cutscene images/towerinsarcolo.png" id="1_yypni"]
 [ext_resource type="Texture2D" uid="uid://bi20axqikxg5w" path="res://sprites/cutscene images/sarcoloinspace.png" id="2_hhx1h"]
@@ -44,7 +45,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_rgobn")
 }],
 "loop": true,
-"name": &"phadriusinspace",
+"name": &"0",
 "speed": 2.0
 }, {
 "frames": [{
@@ -52,7 +53,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_u1tsj")
 }],
 "loop": true,
-"name": &"sarcoloinspace",
+"name": &"1",
 "speed": 5.0
 }, {
 "frames": [{
@@ -60,19 +61,31 @@ animations = [{
 "texture": SubResource("AtlasTexture_1bma1")
 }],
 "loop": true,
-"name": &"towerofsarcolo",
+"name": &"2",
 "speed": 5.0
 }]
 
 [node name="cutscene" type="CanvasLayer"]
 follow_viewport_enabled = true
+script = ExtResource("1_08lot")
+
+[node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_fg2ax")
-animation = &"sarcoloinspace"
-autoplay = "phadriusinspace"
+animation = &"2"
+autoplay = "0"
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Label2" type="Label" parent="."]
+offset_left = 73.0
+offset_top = 109.0
+offset_right = 286.0
+offset_bottom = 132.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 11
+text = "(press esc to skip)"
+horizontal_alignment = 1
 
 [node name="Label" type="Label" parent="."]
 offset_left = -221.0
@@ -82,5 +95,5 @@ offset_bottom = -87.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 8
 theme_override_font_sizes/font_size = 16
-text = "who are we to defy providence?"
+text = "shooting star text"
 horizontal_alignment = 1
