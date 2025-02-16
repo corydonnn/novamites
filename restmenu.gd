@@ -3,7 +3,7 @@ extends Node2D
 @onready var bg = $bg
 @onready var marker = $Marker2D
 @onready var marker2 = $Marker2D2
-
+@onready var selectionscreen = preload("res://selection_interface.tscn").instantiate()
 var targetpos
 var targetrot
 
@@ -59,3 +59,7 @@ func _on_left_mouse_entered():
 	tween = get_tree().create_tween()
 	tween.tween_property(needle, "rotation", -3*PI, 1).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
 	hoversound()
+
+
+func _on_top_pressed():
+	add_child(selectionscreen)

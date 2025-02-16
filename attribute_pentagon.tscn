@@ -1,0 +1,116 @@
+[gd_scene load_steps=2 format=3 uid="uid://1n6nkvsure4q"]
+
+[ext_resource type="Script" path="res://attribute_pentagon.gd" id="1_nb64k"]
+
+[node name="attribute_pentagon" type="Node2D"]
+script = ExtResource("1_nb64k")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+z_index = 2
+color = Color(0, 0.52549, 0.760784, 1)
+polygon = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+
+[node name="decorative_backing" type="Polygon2D" parent="."]
+z_index = -1
+color = Color(0, 0.808884, 0.808884, 1)
+polygon = PackedVector2Array(0, -35, 6, -5, 5, 2, -4, 3, -4, -3)
+
+[node name="line_0" type="Line2D" parent="."]
+z_index = 1
+points = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+width = 1.0
+
+[node name="line_1" type="Line2D" parent="."]
+z_index = 1
+points = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+width = 1.0
+
+[node name="line_2" type="Line2D" parent="."]
+z_index = 1
+points = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+width = 1.0
+
+[node name="line_3" type="Line2D" parent="."]
+z_index = 1
+points = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+width = 1.0
+
+[node name="line_4" type="Line2D" parent="."]
+z_index = 1
+points = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+width = 1.0
+
+[node name="stb" type="Node2D" parent="."]
+
+[node name="stb_label" type="Label" parent="stb"]
+z_index = 3
+offset_left = -7.0
+offset_top = -6.0
+offset_right = 8.0
+offset_bottom = 6.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 8
+text = "STB"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="krm" type="Node2D" parent="."]
+
+[node name="krm_label" type="Label" parent="krm"]
+z_index = 3
+offset_left = -9.0
+offset_top = -6.0
+offset_right = 9.0
+offset_bottom = 6.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 8
+text = "KRM"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="tpr" type="Node2D" parent="."]
+
+[node name="tpr_label" type="Label" parent="tpr"]
+z_index = 3
+offset_left = -7.0
+offset_top = -6.0
+offset_right = 8.0
+offset_bottom = 6.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 8
+text = "TPR"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="att" type="Node2D" parent="."]
+
+[node name="att_label" type="Label" parent="att"]
+z_index = 3
+offset_left = -7.0
+offset_top = -6.0
+offset_right = 8.0
+offset_bottom = 6.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 8
+text = "ATT"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="fbr" type="Node2D" parent="."]
+
+[node name="fbr_label" type="Label" parent="fbr"]
+z_index = 3
+offset_left = -7.0
+offset_top = -6.0
+offset_right = 8.0
+offset_bottom = 6.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 8
+text = "FBR"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true

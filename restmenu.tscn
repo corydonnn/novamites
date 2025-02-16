@@ -57,7 +57,7 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_l4aob")
 metadata/_edit_group_ = true
 
-[node name="ColorRect" type="ColorRect" parent="needle"]
+[node name="shine" type="ColorRect" parent="needle"]
 material = SubResource("ShaderMaterial_yiwsb")
 offset_left = -202.0
 offset_top = -50.0
@@ -114,6 +114,7 @@ color = Color(0, 0, 0.0666667, 1)
 [connection signal="mouse_entered" from="right" to="." method="_on_right_mouse_entered"]
 [connection signal="mouse_entered" from="top" to="." method="_on_top_mouse_entered"]
 [connection signal="mouse_exited" from="top" to="." method="_on_buttons_exited"]
+[connection signal="pressed" from="top" to="." method="_on_top_pressed"]
 [connection signal="mouse_entered" from="bottom" to="." method="_on_bottom_mouse_entered"]
 [connection signal="mouse_exited" from="bottom" to="." method="_on_buttons_exited"]
 [connection signal="mouse_entered" from="left" to="." method="_on_left_mouse_entered"]

@@ -1,0 +1,81 @@
+[gd_scene load_steps=8 format=3 uid="uid://hlvafpbvjkfu"]
+
+[ext_resource type="Script" path="res://selection_interface.gd" id="1_mhbqu"]
+[ext_resource type="Texture2D" uid="uid://utcii52nlky4" path="res://sprites/novamiteselectionbg.png" id="2_aeylw"]
+[ext_resource type="Texture2D" uid="uid://cmygjtfehqroi" path="res://sprites/portraits/glitchwurmportrait.png" id="3_85xyn"]
+[ext_resource type="PackedScene" uid="uid://73fk2t1l6tqi" path="res://tablet.tscn" id="4_1eeeb"]
+[ext_resource type="Texture2D" uid="uid://bbg5bewbua4xi" path="res://sprites/portraits/plceholderportrait.png" id="4_36c5l"]
+[ext_resource type="PackedScene" uid="uid://1n6nkvsure4q" path="res://attribute_pentagon.tscn" id="6_yon85"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xer70"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_85xyn")
+}],
+"loop": true,
+"name": &"glitchwurm",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_36c5l")
+}],
+"loop": true,
+"name": &"placeholder",
+"speed": 5.0
+}]
+
+[node name="selection_interface" type="Control"]
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_right = 480.0
+offset_bottom = 271.0
+script = ExtResource("1_mhbqu")
+
+[node name="bg" type="Sprite2D" parent="."]
+position = Vector2(240, 135)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_aeylw")
+
+[node name="portraits" type="AnimatedSprite2D" parent="."]
+position = Vector2(107.938, 81.3125)
+scale = Vector2(0.252721, 0.252883)
+sprite_frames = SubResource("SpriteFrames_xer70")
+animation = &"placeholder"
+
+[node name="tablet" parent="." instance=ExtResource("4_1eeeb")]
+position = Vector2(232, 34)
+
+[node name="tablet2" parent="." instance=ExtResource("4_1eeeb")]
+position = Vector2(269, 35)
+novamite = "glitchwurm"
+
+[node name="attribute_pentagon" parent="." instance=ExtResource("6_yon85")]
+position = Vector2(105, 199)
+scale = Vector2(0.75, 0.75)
+
+[node name="name_text" type="Label" parent="."]
+layout_mode = 0
+offset_left = 224.0
+offset_top = 157.0
+offset_right = 437.0
+offset_bottom = 180.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 11
+text = "Placeholder Name :3"
+
+[node name="body_text" type="Label" parent="."]
+layout_mode = 0
+offset_left = 227.0
+offset_top = 177.0
+offset_right = 456.0
+offset_bottom = 236.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 6
+text = "Placheholder body text. Call me Guy Fieri the way I'm taking this game to flavortown soon. :3"
+autowrap_mode = 3
