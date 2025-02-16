@@ -1,17 +1,28 @@
-[gd_scene load_steps=5 format=3 uid="uid://yjyg2mvxkxed"]
+[gd_scene load_steps=6 format=3 uid="uid://yjyg2mvxkxed"]
 
-[ext_resource type="Texture2D" uid="uid://d3vi3r87jsfkl" path="res://sprites/titlescreen_giga_placeholder.png" id="1_bisgc"]
 [ext_resource type="Script" path="res://title_screen.gd" id="1_tvscq"]
 [ext_resource type="Texture2D" uid="uid://bucoumx4its6d" path="res://sprites/lmao.png" id="3_odwj1"]
+[ext_resource type="Shader" path="res://starfield.gdshader" id="4_1ksm1"]
 [ext_resource type="Texture2D" uid="uid://b1ifctmux7t4p" path="res://sprites/lmao2.png" id="4_hhs0a"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nlinl"]
+shader = ExtResource("4_1ksm1")
+shader_parameter/zoom = 1.0
+shader_parameter/NUM_LAYERS = 7.0
+shader_parameter/brightness1 = 1.0
+shader_parameter/brightness2 = 0.5
+shader_parameter/brightness3 = 0.5
+shader_parameter/twinkle = 1.0
+shader_parameter/star_rays = 1.0
+shader_parameter/speed = 1.0
+shader_parameter/color1 = Vector3(0.498, 0.588, 1.128)
+shader_parameter/color2 = Vector3(0.303, 0.388, 0.273)
+shader_parameter/color3 = Vector3(1.763, 0.938, 0.787)
+shader_parameter/color4 = Vector3(-2.982, 1.818, 1.948)
+shader_parameter/adjust_queue = Vector2(123.34, 456.821)
 
 [node name="title_screen" type="CanvasLayer"]
 script = ExtResource("1_tvscq")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(240.5, 135)
-scale = Vector2(0.665278, 0.558333)
-texture = ExtResource("1_bisgc")
 
 [node name="playbutton" type="TextureButton" parent="."]
 offset_left = 289.0
@@ -23,4 +34,12 @@ texture_hover = ExtResource("4_hhs0a")
 ignore_texture_size = true
 stretch_mode = 0
 
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -1
+material = SubResource("ShaderMaterial_nlinl")
+offset_right = 482.0
+offset_bottom = 269.0
+mouse_filter = 2
+
+[connection signal="mouse_entered" from="playbutton" to="." method="_on_playbutton_mouse_entered"]
 [connection signal="pressed" from="playbutton" to="." method="_on_playbutton_pressed"]

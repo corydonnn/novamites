@@ -8,3 +8,6 @@ var tilesize = 45
 #debug vars
 var debughealthllabels : bool = false
 var cancheatstarbits : bool = true
+
+#settings vars
+var showcutsceneonstartup : bool = false

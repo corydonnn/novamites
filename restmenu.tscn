@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://v644plrj2tvj"]
+[gd_scene load_steps=9 format=3 uid="uid://v644plrj2tvj"]
 
 [ext_resource type="Script" path="res://restmenu.gd" id="1_67f1v"]
 [ext_resource type="Texture2D" uid="uid://ckv80pr6g8p57" path="res://sprites/spinnercenter.png" id="2_mf57v"]
-[ext_resource type="Texture2D" uid="uid://b2vwqujvwi40" path="res://sprites/starbit_needle.png" id="3_l4aob"]
+[ext_resource type="Texture2D" uid="uid://dc6aw0hoox7qi" path="res://sprites/starbit_needle.png" id="3_l4aob"]
 [ext_resource type="Shader" path="res://shimmer.gdshader" id="3_o1vnp"]
+[ext_resource type="Shader" path="res://space.gdshader" id="5_5khqo"]
+[ext_resource type="Texture2D" uid="uid://lvqd0ryvl3a5" path="res://sprites/bubble_selected.png" id="5_rbuva"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yiwsb"]
 shader = ExtResource("3_o1vnp")
@@ -17,6 +19,20 @@ shader_parameter/Position = 0.0
 shader_parameter/Position_Min = 0.25
 shader_parameter/Position_Max = 0.5
 shader_parameter/Alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rkdn4"]
+shader = ExtResource("5_5khqo")
+shader_parameter/dimensions = Vector2(1024, 600)
+shader_parameter/small_stars = 50.0
+shader_parameter/small_stars_far_size = 0.5
+shader_parameter/small_stars_near_size = 1.0
+shader_parameter/large_stars = 8.0
+shader_parameter/large_stars_far_size = 0.5
+shader_parameter/large_stars_near_size = 1.0
+shader_parameter/far_stars_color = Color(0.5, 0, 1, 1)
+shader_parameter/near_stars_color = Color(1, 1, 1, 1)
+shader_parameter/base_scroll_speed = 0.01
+shader_parameter/additional_scroll_speed = 0.01
 
 [node name="restmenu" type="Node2D"]
 script = ExtResource("1_67f1v")
@@ -34,10 +50,12 @@ scale = Vector2(0.3, 0.3)
 
 [node name="needle" type="Sprite2D" parent="."]
 clip_children = 2
-position = Vector2(235, 139)
+z_index = 1
+position = Vector2(237, 139)
 rotation = -0.785398
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_l4aob")
+metadata/_edit_group_ = true
 
 [node name="ColorRect" type="ColorRect" parent="needle"]
 material = SubResource("ShaderMaterial_yiwsb")
@@ -47,31 +65,51 @@ offset_right = 200.0
 offset_bottom = 40.0
 
 [node name="right" type="TextureButton" parent="."]
-offset_left = 319.0
-offset_top = 115.0
-offset_right = 359.0
-offset_bottom = 155.0
+offset_left = 312.0
+offset_top = 107.0
+offset_right = 370.0
+offset_bottom = 165.0
+texture_hover = ExtResource("5_rbuva")
+ignore_texture_size = true
+stretch_mode = 0
 
 [node name="top" type="TextureButton" parent="."]
-offset_left = 214.0
-offset_top = 21.0
-offset_right = 254.0
-offset_bottom = 61.0
+offset_left = 207.0
+offset_top = 11.0
+offset_right = 265.0
+offset_bottom = 70.0
+texture_hover = ExtResource("5_rbuva")
+ignore_texture_size = true
+stretch_mode = 0
 
 [node name="bottom" type="TextureButton" parent="."]
-offset_left = 214.0
-offset_top = 206.0
-offset_right = 254.0
-offset_bottom = 246.0
+offset_left = 206.0
+offset_top = 202.0
+offset_right = 260.0
+offset_bottom = 256.0
+texture_hover = ExtResource("5_rbuva")
+ignore_texture_size = true
+stretch_mode = 0
 
 [node name="left" type="TextureButton" parent="."]
-offset_left = 114.0
-offset_top = 119.0
-offset_right = 154.0
-offset_bottom = 159.0
+offset_left = 107.0
+offset_top = 112.0
+offset_right = 161.0
+offset_bottom = 166.0
+texture_hover = ExtResource("5_rbuva")
+ignore_texture_size = true
+stretch_mode = 0
 
 [node name="Marker2D2" type="Marker2D" parent="."]
 position = Vector2(324, 59)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -1
+material = SubResource("ShaderMaterial_rkdn4")
+offset_right = 481.0
+offset_bottom = 270.0
+mouse_filter = 2
+color = Color(0, 0, 0.0666667, 1)
 
 [connection signal="mouse_entered" from="right" to="." method="_on_right_mouse_entered"]
 [connection signal="mouse_entered" from="top" to="." method="_on_top_mouse_entered"]
