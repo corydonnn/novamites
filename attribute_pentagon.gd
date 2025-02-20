@@ -16,7 +16,7 @@ extends Node2D
 
 
 
-@export var ringsize :int = -7 #radius of each ring in pixels, neagtive to make a point directly up from center
+@export var ringsize :int = -10 #radius of each ring in pixels, neagtive to make a point directly up from center
 @export var attribute_vals : Array = [0,0,0,0,0] #values for each attribute, default defined here
 
 func _ready():
@@ -52,7 +52,4 @@ func set_line_points(line,ringnum): #makes pentagon from line2d in given ring
 	for i in line.points:
 		line.points[iteration] = Vector2(0,ringsize*ringnum).rotated(deg_to_rad(72*iteration))
 		iteration +=1
-
-func tweenshape(): #manual tweening cuz apparently tweening points is impossible in godot :(
-	pass
   

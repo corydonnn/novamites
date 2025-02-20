@@ -3,9 +3,11 @@ extends Control
 @onready var attribute_pentagon = $attribute_pentagon
 @onready var name_text = $name_text
 @onready var body_text = $body_text
-
+@onready var selected_tablet = $selected_tablet
+var selected
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	selected_tablet.button.disabled = true
 	for i in get_children():
 		if i.name.contains("tablet"):
 			i.clicked.connect(_on_tablet_clicked)
@@ -39,3 +41,7 @@ func _on_tablet_clicked(novamite):
 	name_text.text = text_data[id_linkage[novamite]]["name"] 
 	body_text.text = text_data[id_linkage[novamite]]["body_text"]
 	attribute_pentagon.attribute_vals = attribute_data[novamite]
+
+
+func _on_back_button_pressed():
+	visible=false

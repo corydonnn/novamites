@@ -8,11 +8,7 @@ var mite
 
 func _ready():
 	Globalvars.lane1spawnpos = $lane1.position
-	spawnenemy(0, enemy0)
-	spawnenemy(1, enemy0)
-	spawnenemy(2, enemy0)
-	spawnenemy(3, enemy0)
-	spawnenemy(4, enemy0)
+
 func gettiledata(tile_map, tile_mouse_pos, custom_data_layer, layer): #function that checks for specific custom data on a layer
 	var tile_data : TileData = tile_map.get_cell_tile_data(layer, tile_mouse_pos)
 	if tile_data:
@@ -26,8 +22,7 @@ func spawnenemy(lane, type):
 	enemy.global_position.y = Globalvars.lane1spawnpos.y + Globalvars.tilesize * (lane)
 	add_child(enemy)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
+func _process(_delta): #HORRENDOUSLY UGLY CODE i pretend i do not see it
 	var tilepos = occupancy_map.local_to_map(get_local_mouse_position())
 	if Input.is_action_just_pressed('leftclick') and Globalvars.held != 'none' and tilepos.y>-3 and tilepos.x<5:
 		var used = gettiledata(occupancy_map, occupancy_map.local_to_map(get_local_mouse_position()), "occupied", 0)
@@ -49,3 +44,12 @@ func _process(_delta):
 	
 	if Input.is_action_just_pressed("givestarbits") and Globalvars.cancheatstarbits == true:
 		Globalvars.starbits += 10
+
+
+func _on_wavetimer_timeout():
+	spawnenemy(0, enemy0)
+	spawnenemy(1, enemy0)
+	spawnenemy(2, enemy0)
+	spawnenemy(3, enemy0)
+	spawnenemy(4, enemy0)
+	$wavetimer.wait_time *= .9

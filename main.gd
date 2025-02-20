@@ -23,6 +23,7 @@ func start_gameplay():
 		await get_tree().create_timer(1).timeout
 		titlescreen.queue_free()
 		add_child(restscreen)
+		restscreen.embark.connect(_on_embark)
 		sounds.rest_ambience.play()
 		active = false
 	
@@ -33,3 +34,8 @@ func _process(delta):
 func _on_cutscene_finished():
 	sounds.fadeoutcutsceneatmo()
 	add_child(titlescreen)
+
+func _on_embark():
+	sounds.rest_ambience.stop()
+	add_child(playarea)
+	restscreen.visible = false

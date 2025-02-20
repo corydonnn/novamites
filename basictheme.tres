@@ -1,0 +1,8 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://bmmvgk0k1x4au"]
+
+[ext_resource type="FontFile" uid="uid://cr43nr20laxrk" path="res://Cairo-VariableFont_slnt,wght.ttf" id="1_hyuxt"]
+
+[resource]
+default_base_scale = 1.0
+default_font = ExtResource("1_hyuxt")
+default_font_size = 12

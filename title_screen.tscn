@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://yjyg2mvxkxed"]
+[gd_scene load_steps=7 format=3 uid="uid://yjyg2mvxkxed"]
 
 [ext_resource type="Script" path="res://title_screen.gd" id="1_tvscq"]
 [ext_resource type="Texture2D" uid="uid://bucoumx4its6d" path="res://sprites/lmao.png" id="3_odwj1"]
 [ext_resource type="Shader" path="res://starfield.gdshader" id="4_1ksm1"]
 [ext_resource type="Texture2D" uid="uid://b1ifctmux7t4p" path="res://sprites/lmao2.png" id="4_hhs0a"]
+[ext_resource type="Texture2D" uid="uid://cnqe04tx6esss" path="res://sprites/placeholder/placeholder logo.png" id="5_1kumn"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_nlinl"]
 shader = ExtResource("4_1ksm1")
@@ -25,10 +26,10 @@ shader_parameter/adjust_queue = Vector2(123.34, 456.821)
 script = ExtResource("1_tvscq")
 
 [node name="playbutton" type="TextureButton" parent="."]
-offset_left = 289.0
-offset_top = 60.0
-offset_right = 451.0
-offset_bottom = 99.0
+offset_left = 422.0
+offset_top = 94.0
+offset_right = 584.0
+offset_bottom = 133.0
 texture_normal = ExtResource("3_odwj1")
 texture_hover = ExtResource("4_hhs0a")
 ignore_texture_size = true
@@ -37,9 +38,19 @@ stretch_mode = 0
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = -1
 material = SubResource("ShaderMaterial_nlinl")
-offset_right = 482.0
-offset_bottom = 269.0
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 652.0
+offset_bottom = 377.0
 mouse_filter = 2
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(129, 109)
+rotation = -0.523599
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("5_1kumn")
 
 [connection signal="mouse_entered" from="playbutton" to="." method="_on_playbutton_mouse_entered"]
 [connection signal="pressed" from="playbutton" to="." method="_on_playbutton_pressed"]

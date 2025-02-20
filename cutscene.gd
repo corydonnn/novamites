@@ -2,7 +2,7 @@ extends CanvasLayer
 @onready var anim = $AnimatedSprite2D
 @onready var text = $Label
 signal done
-var finalscene = "2" #horrendous code but if it works yk
+var finalscene = "3" #horrendous code but if it works yk
 var playing = "0"
 var canclick = true
 # Called when the node enters the scene tree for the first time.
@@ -11,9 +11,10 @@ func _ready():
 	music.play()
 
 var cutscenetext1 = {
-	"0" = "text",
-	"1" = "evil star text",
-	"2" = "pillar text",
+	"0" = "meowmeow",
+	"1" = "meowemowemowemwoemow",
+	"2" = "oooooooooo gros",
+	"3" = "freaky :0",
 	}
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

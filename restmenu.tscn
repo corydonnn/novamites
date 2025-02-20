@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://v644plrj2tvj"]
+[gd_scene load_steps=10 format=3 uid="uid://v644plrj2tvj"]
 
 [ext_resource type="Script" path="res://restmenu.gd" id="1_67f1v"]
 [ext_resource type="Texture2D" uid="uid://ckv80pr6g8p57" path="res://sprites/spinnercenter.png" id="2_mf57v"]
@@ -6,6 +6,7 @@
 [ext_resource type="Shader" path="res://shimmer.gdshader" id="3_o1vnp"]
 [ext_resource type="Shader" path="res://space.gdshader" id="5_5khqo"]
 [ext_resource type="Texture2D" uid="uid://lvqd0ryvl3a5" path="res://sprites/bubble_selected.png" id="5_rbuva"]
+[ext_resource type="Theme" uid="uid://bmmvgk0k1x4au" path="res://basictheme.tres" id="7_pfdua"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yiwsb"]
 shader = ExtResource("3_o1vnp")
@@ -39,19 +40,19 @@ script = ExtResource("1_67f1v")
 
 [node name="bg" type="Sprite2D" parent="."]
 clip_children = 2
-position = Vector2(240, 138)
+position = Vector2(328, 185.77)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_mf57v")
 
 [node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(235, 139)
+position = Vector2(323, 186.77)
 rotation = -0.785398
 scale = Vector2(0.3, 0.3)
 
 [node name="needle" type="Sprite2D" parent="."]
 clip_children = 2
 z_index = 1
-position = Vector2(237, 139)
+position = Vector2(325, 186.77)
 rotation = -0.785398
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_l4aob")
@@ -64,57 +65,113 @@ offset_top = -50.0
 offset_right = 200.0
 offset_bottom = 40.0
 
-[node name="right" type="TextureButton" parent="."]
-offset_left = 312.0
-offset_top = 107.0
-offset_right = 370.0
-offset_bottom = 165.0
+[node name="summon" type="TextureButton" parent="."]
+offset_left = 293.0
+offset_top = 61.0
+offset_right = 351.0
+offset_bottom = 119.0
 texture_hover = ExtResource("5_rbuva")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="top" type="TextureButton" parent="."]
-offset_left = 207.0
-offset_top = 11.0
-offset_right = 265.0
-offset_bottom = 70.0
+[node name="Label" type="Label" parent="summon"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 17.0
+offset_right = 63.0
+offset_bottom = 50.0
+theme = ExtResource("7_pfdua")
+theme_override_font_sizes/font_size = 11
+text = "summon"
+horizontal_alignment = 1
+
+[node name="manage" type="TextureButton" parent="."]
+offset_left = 400.0
+offset_top = 154.0
+offset_right = 458.0
+offset_bottom = 213.0
+texture_hover = ExtResource("5_rbuva")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="manage"]
+layout_mode = 0
+offset_left = -4.0
+offset_top = 17.2303
+offset_right = 61.0
+offset_bottom = 50.2303
+theme = ExtResource("7_pfdua")
+theme_override_font_sizes/font_size = 12
+text = "manage"
+horizontal_alignment = 1
+
+[node name="embark" type="TextureButton" parent="."]
+offset_left = 294.0
+offset_top = 249.77
+offset_right = 348.0
+offset_bottom = 303.77
 texture_hover = ExtResource("5_rbuva")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="bottom" type="TextureButton" parent="."]
-offset_left = 206.0
-offset_top = 202.0
-offset_right = 260.0
-offset_bottom = 256.0
+[node name="Label" type="Label" parent="embark"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 16.2303
+offset_right = 47.0
+offset_bottom = 39.2303
+theme = ExtResource("7_pfdua")
+text = "embark"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="hone" type="TextureButton" parent="."]
+offset_left = 195.0
+offset_top = 159.77
+offset_right = 249.0
+offset_bottom = 213.77
 texture_hover = ExtResource("5_rbuva")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="left" type="TextureButton" parent="."]
-offset_left = 107.0
-offset_top = 112.0
-offset_right = 161.0
-offset_bottom = 166.0
-texture_hover = ExtResource("5_rbuva")
-ignore_texture_size = true
-stretch_mode = 0
+[node name="Label" type="Label" parent="hone"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 13.2303
+offset_right = 54.0
+offset_bottom = 46.2303
+theme = ExtResource("7_pfdua")
+theme_override_font_sizes/font_size = 14
+text = "hone"
+horizontal_alignment = 1
 
 [node name="Marker2D2" type="Marker2D" parent="."]
-position = Vector2(324, 59)
+position = Vector2(412, 106.77)
 
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = -1
 material = SubResource("ShaderMaterial_rkdn4")
-offset_right = 481.0
-offset_bottom = 270.0
+offset_right = 641.0
+offset_bottom = 360.0
 mouse_filter = 2
 color = Color(0, 0, 0.0666667, 1)
+metadata/_edit_lock_ = true
 
-[connection signal="mouse_entered" from="right" to="." method="_on_right_mouse_entered"]
-[connection signal="mouse_entered" from="top" to="." method="_on_top_mouse_entered"]
-[connection signal="mouse_exited" from="top" to="." method="_on_buttons_exited"]
-[connection signal="pressed" from="top" to="." method="_on_top_pressed"]
-[connection signal="mouse_entered" from="bottom" to="." method="_on_bottom_mouse_entered"]
-[connection signal="mouse_exited" from="bottom" to="." method="_on_buttons_exited"]
-[connection signal="mouse_entered" from="left" to="." method="_on_left_mouse_entered"]
+[node name="description_label" type="Label" parent="."]
+offset_left = 34.0
+offset_top = 321.0
+offset_right = 612.0
+offset_bottom = 344.0
+theme = ExtResource("7_pfdua")
+horizontal_alignment = 1
+
+[connection signal="mouse_entered" from="summon" to="." method="_on_right_mouse_entered"]
+[connection signal="mouse_exited" from="summon" to="." method="_button_mouse_exited"]
+[connection signal="mouse_entered" from="manage" to="." method="_on_top_mouse_entered"]
+[connection signal="mouse_exited" from="manage" to="." method="_on_buttons_exited"]
+[connection signal="pressed" from="manage" to="." method="_on_top_pressed"]
+[connection signal="mouse_entered" from="embark" to="." method="_on_bottom_mouse_entered"]
+[connection signal="mouse_exited" from="embark" to="." method="_on_buttons_exited"]
+[connection signal="pressed" from="embark" to="." method="_on_embark_pressed"]
+[connection signal="mouse_entered" from="hone" to="." method="_on_left_mouse_entered"]

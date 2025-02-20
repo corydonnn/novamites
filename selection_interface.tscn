@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://hlvafpbvjkfu"]
+[gd_scene load_steps=11 format=3 uid="uid://hlvafpbvjkfu"]
 
 [ext_resource type="Script" path="res://selection_interface.gd" id="1_mhbqu"]
 [ext_resource type="Texture2D" uid="uid://utcii52nlky4" path="res://sprites/novamiteselectionbg.png" id="2_aeylw"]
@@ -6,6 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://73fk2t1l6tqi" path="res://tablet.tscn" id="4_1eeeb"]
 [ext_resource type="Texture2D" uid="uid://bbg5bewbua4xi" path="res://sprites/portraits/plceholderportrait.png" id="4_36c5l"]
 [ext_resource type="PackedScene" uid="uid://1n6nkvsure4q" path="res://attribute_pentagon.tscn" id="6_yon85"]
+[ext_resource type="FontFile" uid="uid://cr43nr20laxrk" path="res://Cairo-VariableFont_slnt,wght.ttf" id="7_8vpei"]
+[ext_resource type="Texture2D" uid="uid://n6ka0fggvkt4" path="res://sprites/tablets/tabletblank.png" id="7_h3ips"]
+[ext_resource type="Theme" uid="uid://bmmvgk0k1x4au" path="res://basictheme.tres" id="7_mo5a8"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xer70"]
 animations = [{
@@ -30,52 +33,80 @@ animations = [{
 z_index = 1
 layout_mode = 3
 anchors_preset = 0
-offset_right = 480.0
-offset_bottom = 271.0
+offset_right = 640.0
+offset_bottom = 354.0
 script = ExtResource("1_mhbqu")
 
 [node name="bg" type="Sprite2D" parent="."]
-position = Vector2(240, 135)
-scale = Vector2(0.25, 0.25)
+position = Vector2(320, 180)
 texture = ExtResource("2_aeylw")
 
 [node name="portraits" type="AnimatedSprite2D" parent="."]
-position = Vector2(107.938, 81.3125)
-scale = Vector2(0.252721, 0.252883)
+position = Vector2(143.94, 109.438)
+scale = Vector2(0.332217, 0.332217)
 sprite_frames = SubResource("SpriteFrames_xer70")
 animation = &"placeholder"
 
 [node name="tablet" parent="." instance=ExtResource("4_1eeeb")]
-position = Vector2(232, 34)
+position = Vector2(308, 43)
+scale = Vector2(0.3, 0.3)
 
 [node name="tablet2" parent="." instance=ExtResource("4_1eeeb")]
-position = Vector2(269, 35)
+position = Vector2(357, 43)
+scale = Vector2(0.3, 0.3)
 novamite = "glitchwurm"
 
+[node name="selected_tablet" parent="." instance=ExtResource("4_1eeeb")]
+position = Vector2(225, 265)
+scale = Vector2(0.3, 0.3)
+novamite = "pressed"
+
 [node name="attribute_pentagon" parent="." instance=ExtResource("6_yon85")]
-position = Vector2(105, 199)
+position = Vector2(94, 269)
 scale = Vector2(0.75, 0.75)
 
 [node name="name_text" type="Label" parent="."]
 layout_mode = 0
-offset_left = 224.0
-offset_top = 157.0
-offset_right = 437.0
-offset_bottom = 180.0
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 8
-theme_override_font_sizes/font_size = 11
+offset_left = 298.0
+offset_top = 209.0
+offset_right = 511.0
+offset_bottom = 232.0
+theme = ExtResource("7_mo5a8")
 text = "Placeholder Name :3"
 
 [node name="body_text" type="Label" parent="."]
 layout_mode = 0
-offset_left = 227.0
-offset_top = 177.0
-offset_right = 456.0
-offset_bottom = 236.0
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 4
-theme_override_constants/line_spacing = 0
-theme_override_font_sizes/font_size = 6
+offset_left = 299.0
+offset_top = 234.0
+offset_right = 610.0
+offset_bottom = 323.0
+theme = ExtResource("7_mo5a8")
+theme_override_colors/font_color = Color(0.103744, 0.103744, 0.103744, 1)
+theme_override_constants/line_spacing = -8
+theme_override_fonts/font = ExtResource("7_8vpei")
+theme_override_font_sizes/font_size = 10
 text = "Placheholder body text. Call me Guy Fieri the way I'm taking this game to flavortown soon. :3"
 autowrap_mode = 3
+
+[node name="back_button" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 2.0
+offset_right = 56.0
+offset_bottom = 17.0
+texture_normal = ExtResource("7_h3ips")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="back_button"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = -4.0
+offset_right = 45.0
+offset_bottom = 19.0
+theme_override_font_sizes/font_size = 8
+text = "go back"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="back_button" to="." method="_on_back_button_pressed"]

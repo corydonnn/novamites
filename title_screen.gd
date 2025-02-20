@@ -10,7 +10,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	$Sprite2D.apply_scale(Vector2(1.001,1.001)) #ugly disgusting placeholder code
 
 
 func _on_playbutton_pressed():

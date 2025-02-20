@@ -25,7 +25,7 @@ max_polyphony = 20
 [node name="gunshot" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_4yfbp")
 volume_db = -20.0
-max_polyphony = 10
+max_polyphony = 3
 
 [node name="cutscene_atmo" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_igyco")
