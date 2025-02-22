@@ -1,18 +1,18 @@
 [gd_scene load_steps=55 format=3 uid="uid://dwbp4j5f50gen"]
 
-[ext_resource type="Texture2D" uid="uid://dyrdrhupgfj2" path="res://sprites/actbarplaceholder.png" id="1_7d3gb"]
+[ext_resource type="Texture2D" uid="uid://dyrdrhupgfj2" path="res://sprites/placeholder/actbarplaceholder.png" id="1_7d3gb"]
 [ext_resource type="Script" path="res://actionbar.gd" id="2_v8yd8"]
 [ext_resource type="Texture2D" uid="uid://c1vcb71wswkln" path="res://sprites/channelericon.png" id="3_8ri0v"]
 [ext_resource type="Texture2D" uid="uid://bbm1rsanqker3" path="res://sprites/glitchwurmicon.png" id="3_lo08i"]
-[ext_resource type="Texture2D" uid="uid://b8xtyti37ra6l" path="res://sprites/novamiteicon.png" id="4_qcssk"]
-[ext_resource type="Texture2D" uid="uid://ddbhucoivih6k" path="res://sprites/channelerplaceholder.png" id="5_fwnki"]
-[ext_resource type="Texture2D" uid="uid://fytdtkxil0ag" path="res://sprites/novamiteplaceholder.png" id="5_ght8b"]
+[ext_resource type="Texture2D" uid="uid://b8xtyti37ra6l" path="res://sprites/placeholder/novamiteicon.png" id="4_qcssk"]
+[ext_resource type="Texture2D" uid="uid://ddbhucoivih6k" path="res://sprites/placeholder/channelerplaceholder.png" id="5_fwnki"]
+[ext_resource type="Texture2D" uid="uid://fytdtkxil0ag" path="res://sprites/placeholder/novamiteplaceholder.png" id="5_ght8b"]
 [ext_resource type="Texture2D" uid="uid://4i08f0s7n7c7" path="res://sprites/1x1transparentpixel.png" id="5_hnbwx"]
 [ext_resource type="Texture2D" uid="uid://cb4qvqwvuk4dk" path="res://sprites/stone_texture.png" id="5_kcbm4"]
 [ext_resource type="Texture2D" uid="uid://dt6hqup2av0rd" path="res://sprites/gitchwurm.png" id="6_q2hyv"]
 [ext_resource type="Texture2D" uid="uid://c7n8ptddx4ic8" path="res://sprites/progempty.png" id="9_yw5fy"]
 [ext_resource type="Texture2D" uid="uid://y8w84wfysm0s" path="res://sprites/progfull.png" id="10_imhpn"]
-[ext_resource type="Texture2D" uid="uid://sno1jvdnoorm" path="res://sprites/placeholder gun.png" id="11_v3dd4"]
+[ext_resource type="Texture2D" uid="uid://sno1jvdnoorm" path="res://sprites/placeholder/placeholder gun.png" id="11_v3dd4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mthke"]
 atlas = ExtResource("3_8ri0v")

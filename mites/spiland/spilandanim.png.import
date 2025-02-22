@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djlngmk5itnab"
-path="res://.godot/imported/placeholder 1.png-d8f8dba4824a78f25faeec2ffdbff59a.ctex"
+uid="uid://ivl6ijqj605"
+path="res://.godot/imported/spilandanim.png-fd68eace5525f802f8abfad098a5507b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/cutscene images/placeholder 1.png"
-dest_files=["res://.godot/imported/placeholder 1.png-d8f8dba4824a78f25faeec2ffdbff59a.ctex"]
+source_file="res://mites/spiland/spilandanim.png"
+dest_files=["res://.godot/imported/spilandanim.png-fd68eace5525f802f8abfad098a5507b.ctex"]
 
 [params]
 

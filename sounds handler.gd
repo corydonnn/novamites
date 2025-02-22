@@ -7,6 +7,8 @@ extends Node
 @onready var menu_click = $menu_click
 @onready var menu_click_2 = $menu_click_2
 @onready var rest_ambience = $rest_ambience
+@onready var splash = $splash
+
 var tween
 var active = false
 

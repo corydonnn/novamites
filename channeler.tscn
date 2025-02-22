@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://cqv3vkpha8umo"]
 
-[ext_resource type="Texture2D" uid="uid://ddbhucoivih6k" path="res://sprites/channelerplaceholder.png" id="1_i2d4u"]
+[ext_resource type="Texture2D" uid="uid://ddbhucoivih6k" path="res://sprites/placeholder/channelerplaceholder.png" id="1_i2d4u"]
 [ext_resource type="Script" path="res://channeler.gd" id="1_u8lyb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rqvxr"]

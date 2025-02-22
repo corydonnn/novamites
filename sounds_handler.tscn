@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bv5lfn1tyh7k3"]
+[gd_scene load_steps=11 format=3 uid="uid://bv5lfn1tyh7k3"]
 
 [ext_resource type="Script" path="res://sounds handler.gd" id="1_1xby5"]
 [ext_resource type="AudioStream" uid="uid://d0v3bhxlxu4xx" path="res://sfx/glitch-sound-fx-pack-04-118236.mp3" id="2_j17h5"]
@@ -9,6 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://dkjl1iogk5s7a" path="res://sfx/Menu Selection Click.wav" id="7_2fkrn"]
 [ext_resource type="AudioStream" uid="uid://xvxamf73yu7y" path="res://sfx/kltinop.mp3" id="8_3aelw"]
 [ext_resource type="AudioStream" uid="uid://g5yxagrsao66" path="res://sfx/мистичная тема.mp3" id="9_48ijr"]
+[ext_resource type="AudioStream" uid="uid://qcde3khufhf2" path="res://mites/spiland/splash.mp3" id="10_fkxgd"]
 
 [node name="sounds_handler" type="Node"]
 script = ExtResource("1_1xby5")
@@ -44,3 +45,8 @@ stream = ExtResource("8_3aelw")
 [node name="rest_ambience" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_48ijr")
 volume_db = -20.0
+
+[node name="splash" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_fkxgd")
+volume_db = -15.0
+max_polyphony = 2

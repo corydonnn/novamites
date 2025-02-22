@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dpkofpsygv2c8"
-path="res://.godot/imported/tilemapplaceholder.png-fec915d05a56710de9b5a95c8dd12d7c.ctex"
+uid="uid://sno1jvdnoorm"
+path="res://.godot/imported/placeholder gun.png-20e80a2783912af578ed60c9cb34738e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/tilemapplaceholder.png"
-dest_files=["res://.godot/imported/tilemapplaceholder.png-fec915d05a56710de9b5a95c8dd12d7c.ctex"]
+source_file="res://sprites/placeholder/placeholder gun.png"
+dest_files=["res://.godot/imported/placeholder gun.png-20e80a2783912af578ed60c9cb34738e.ctex"]
 
 [params]
 

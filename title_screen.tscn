@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://yjyg2mvxkxed"]
 
 [ext_resource type="Script" path="res://title_screen.gd" id="1_tvscq"]
-[ext_resource type="Texture2D" uid="uid://bucoumx4its6d" path="res://sprites/lmao.png" id="3_odwj1"]
+[ext_resource type="Texture2D" uid="uid://bucoumx4its6d" path="res://sprites/placeholder/lmao.png" id="2_ik5ao"]
+[ext_resource type="Texture2D" uid="uid://b1ifctmux7t4p" path="res://sprites/placeholder/lmao2.png" id="3_5l5uf"]
 [ext_resource type="Shader" path="res://starfield.gdshader" id="4_1ksm1"]
-[ext_resource type="Texture2D" uid="uid://b1ifctmux7t4p" path="res://sprites/lmao2.png" id="4_hhs0a"]
 [ext_resource type="Texture2D" uid="uid://cnqe04tx6esss" path="res://sprites/placeholder/placeholder logo.png" id="5_1kumn"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_nlinl"]
@@ -30,8 +30,8 @@ offset_left = 422.0
 offset_top = 94.0
 offset_right = 584.0
 offset_bottom = 133.0
-texture_normal = ExtResource("3_odwj1")
-texture_hover = ExtResource("4_hhs0a")
+texture_normal = ExtResource("2_ik5ao")
+texture_hover = ExtResource("3_5l5uf")
 ignore_texture_size = true
 stretch_mode = 0
 

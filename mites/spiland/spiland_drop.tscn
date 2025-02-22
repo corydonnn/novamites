@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://chsq236jr6yrr"]
+
+[ext_resource type="Script" path="res://mites/spiland/spiland_drop.gd" id="1_ler8w"]
+[ext_resource type="Texture2D" uid="uid://bgi5y6qgxf3eq" path="res://mites/spiland/spilanddropplaceholder.png" id="2_56uyf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1fp3e"]
+radius = 23.0217
+
+[node name="spiland_drop" type="Area2D"]
+scale = Vector2(0.2, 0.2)
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_ler8w")
+
+[node name="collision_shape" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_1fp3e")
+
+[node name="sprite" type="Sprite2D" parent="."]
+rotation = -1.5708
+texture = ExtResource("2_56uyf")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
