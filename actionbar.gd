@@ -9,7 +9,7 @@ var starbitwaittimeconst : float = 5
 var starbitwaittime
 #debug
 var slot1 = 'glitchwurm'
-var slot2 = 'channeler'
+var slot2 = 'spiland'
 var slot3 = 'shooter'
 func _ready():
 	starbitwaittime = starbitwaittimeconst - Globalvars.channelers*.1
@@ -17,30 +17,35 @@ func _ready():
 	slot_1_sprite.play(slot1)
 	slot_2_sprite.play(slot2)
 	slot_3_sprite.play(slot3)
+	
+	
 func _process(delta):
 	starbitwaittime = starbitwaittimeconst - Globalvars.channelers*.2
 	$TextureProgressBar.value += delta * 1/starbitwaittime * 100 #times max value
-	if $TextureProgressBar.value == $TextureProgressBar.max_value:
-		$TextureProgressBar.value = 0
-		Globalvars.starbits+=1
+	if $TextureProgressBar.value >= $TextureProgressBar.max_value: #on texture progress fill
+		$TextureProgressBar.value = 0 #reset progress
+		Globalvars.starbits+=1 #give starbit
+		$starbit_sfx.play() #self explanatory
 	starbitcount.text = str(Globalvars.starbits)
 	mousefollow.global_position = get_global_mouse_position()
 	if Input.is_action_just_pressed("rightclick"):
 		Globalvars.held='none'
 	mousefollow.play(Globalvars.held)
 
-func _on_starbittimer_timeout():
-	Globalvars.starbits+=1
-	print(str(Globalvars.starbits))
 
 
+
+
+
+
+#button code. banished to the ether
 func _on_button_1_pressed():
 	if Globalvars.starbits >= int(Mitedata.data[0]['cost']):
 		Globalvars.held = slot1
 		mousefollow.play(Globalvars.held)
 
 func _on_button_2_pressed():
-	if Globalvars.starbits >= int(Mitedata.data[1]['cost']):
+	if Globalvars.starbits >= int(Mitedata.data[4]['cost']):
 		Globalvars.held = slot2
 		mousefollow.play(Globalvars.held)
 

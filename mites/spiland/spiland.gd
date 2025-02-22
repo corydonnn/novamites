@@ -3,17 +3,37 @@ extends Node2D
 @onready var anim = $sprite
 @onready var actiontimer = $actiontimer
 @onready var cast = $RayCast2D
-var attacking = false
+@onready var cast2 = $RayCast2D2
+@onready var cast3 = $RayCast2D3
+@onready var cast4 = $RayCast2D4
+@onready var label = $Label
+@onready var occupancy_map = $"../occupancy_map"
 
+var attacking = false
+var health
 
 func _ready():
-	pass
+	Globalvars.starbits -= int(Mitedata.data[4]['cost'])
+	Globalvars.held = 'none'
+	health = float(Mitedata.data[4]['health'])
+	print(global_transform)
+	if Globalvars.debughealthllabels == true:
+		$Label.show()
 
 func _process(delta):
-	if cast.is_colliding() and not attacking:
+	var colliding
+	if cast.is_colliding() == true or cast2.is_colliding() == true or cast3.is_colliding() == true or cast4.is_colliding() == true: #this is gross but it was buggin
+		colliding = true
+	else:
+		colliding = false
+	if colliding and not attacking:
 		attack()
-	if cast.is_colliding() == false and attacking:
+	if colliding == false and attacking:
 		stop_attack()
+	label.text = str(health)
+	if health <= 0:
+		occupancy_map.set_cell(0,occupancy_map.local_to_map(global_position),0, Vector2(1,0))
+		queue_free()
 
 #attack code
 func attack():
@@ -21,8 +41,6 @@ func attack():
 	anim.play("spin")
 	spin_audio.playing = true #using this here so it loops i think
 	actiontimer.start()
-	for i in range(8):
-		_spawn_drop(deg_to_rad(360/8*i), 150)
 func stop_attack():
 	attacking = false
 	anim.play("idle")

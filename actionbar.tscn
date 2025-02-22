@@ -1,18 +1,22 @@
-[gd_scene load_steps=55 format=3 uid="uid://dwbp4j5f50gen"]
+[gd_scene load_steps=70 format=3 uid="uid://dwbp4j5f50gen"]
 
-[ext_resource type="Texture2D" uid="uid://dyrdrhupgfj2" path="res://sprites/placeholder/actbarplaceholder.png" id="1_7d3gb"]
+[ext_resource type="Texture2D" uid="uid://dyrdrhupgfj2" path="res://sprites/actbarplaceholder.png" id="1_7d3gb"]
+[ext_resource type="Theme" uid="uid://bmmvgk0k1x4au" path="res://basictheme.tres" id="2_qewy6"]
 [ext_resource type="Script" path="res://actionbar.gd" id="2_v8yd8"]
 [ext_resource type="Texture2D" uid="uid://c1vcb71wswkln" path="res://sprites/channelericon.png" id="3_8ri0v"]
 [ext_resource type="Texture2D" uid="uid://bbm1rsanqker3" path="res://sprites/glitchwurmicon.png" id="3_lo08i"]
-[ext_resource type="Texture2D" uid="uid://b8xtyti37ra6l" path="res://sprites/placeholder/novamiteicon.png" id="4_qcssk"]
-[ext_resource type="Texture2D" uid="uid://ddbhucoivih6k" path="res://sprites/placeholder/channelerplaceholder.png" id="5_fwnki"]
-[ext_resource type="Texture2D" uid="uid://fytdtkxil0ag" path="res://sprites/placeholder/novamiteplaceholder.png" id="5_ght8b"]
+[ext_resource type="Texture2D" uid="uid://b8xtyti37ra6l" path="res://sprites/novamiteicon.png" id="4_qcssk"]
+[ext_resource type="Texture2D" uid="uid://ddbhucoivih6k" path="res://sprites/channelerplaceholder.png" id="5_fwnki"]
+[ext_resource type="Texture2D" uid="uid://fytdtkxil0ag" path="res://sprites/novamiteplaceholder.png" id="5_ght8b"]
 [ext_resource type="Texture2D" uid="uid://4i08f0s7n7c7" path="res://sprites/1x1transparentpixel.png" id="5_hnbwx"]
 [ext_resource type="Texture2D" uid="uid://cb4qvqwvuk4dk" path="res://sprites/stone_texture.png" id="5_kcbm4"]
+[ext_resource type="Texture2D" uid="uid://bgi5y6qgxf3eq" path="res://mites/spiland/spilanddropplaceholder.png" id="6_l1stv"]
 [ext_resource type="Texture2D" uid="uid://dt6hqup2av0rd" path="res://sprites/gitchwurm.png" id="6_q2hyv"]
 [ext_resource type="Texture2D" uid="uid://c7n8ptddx4ic8" path="res://sprites/progempty.png" id="9_yw5fy"]
 [ext_resource type="Texture2D" uid="uid://y8w84wfysm0s" path="res://sprites/progfull.png" id="10_imhpn"]
-[ext_resource type="Texture2D" uid="uid://sno1jvdnoorm" path="res://sprites/placeholder/placeholder gun.png" id="11_v3dd4"]
+[ext_resource type="Texture2D" uid="uid://sno1jvdnoorm" path="res://sprites/placeholder gun.png" id="11_v3dd4"]
+[ext_resource type="Texture2D" uid="uid://bco6qc1d8d4c1" path="res://mites/spiland/spilandanim.png" id="13_we6ga"]
+[ext_resource type="AudioStream" uid="uid://baolv6k0o4ctb" path="res://sfx/wah.mp3" id="17_x6tjy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mthke"]
 atlas = ExtResource("3_8ri0v")
@@ -29,6 +33,10 @@ region = Rect2(0, 0, 45, 45)
 [sub_resource type="AtlasTexture" id="AtlasTexture_d3nxw"]
 atlas = ExtResource("5_kcbm4")
 region = Rect2(0, 0, 45, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uagnp"]
+atlas = ExtResource("6_l1stv")
+region = Rect2(0, 0, 48, 48)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_54gbc"]
 animations = [{
@@ -62,6 +70,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"shooter",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uagnp")
+}],
+"loop": true,
+"name": &"spiland",
 "speed": 5.0
 }]
 
@@ -205,6 +221,46 @@ region = Rect2(1035, 0, 45, 45)
 atlas = ExtResource("11_v3dd4")
 region = Rect2(1080, 0, 45, 45)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_eooah"]
+atlas = ExtResource("13_we6ga")
+region = Rect2(600, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j0y2q"]
+atlas = ExtResource("13_we6ga")
+region = Rect2(650, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p0ldh"]
+atlas = ExtResource("13_we6ga")
+region = Rect2(700, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6cltd"]
+atlas = ExtResource("13_we6ga")
+region = Rect2(750, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v5qxs"]
+atlas = ExtResource("13_we6ga")
+region = Rect2(800, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bhckc"]
+atlas = ExtResource("13_we6ga")
+region = Rect2(850, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s0qiu"]
+atlas = ExtResource("13_we6ga")
+region = Rect2(900, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ipr5t"]
+atlas = ExtResource("13_we6ga")
+region = Rect2(950, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l8tvh"]
+atlas = ExtResource("13_we6ga")
+region = Rect2(1000, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_28868"]
+atlas = ExtResource("13_we6ga")
+region = Rect2(1050, 0, 50, 50)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_g0fau"]
 animations = [{
 "frames": [{
@@ -336,26 +392,63 @@ animations = [{
 "loop": true,
 "name": &"shooter",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eooah")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j0y2q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p0ldh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6cltd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v5qxs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bhckc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s0qiu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ipr5t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l8tvh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_28868")
+}],
+"loop": true,
+"name": &"spiland",
+"speed": 5.0
 }]
 
 [node name="Actbarplaceholder" type="Node2D"]
+position = Vector2(-3, -4)
 script = ExtResource("2_v8yd8")
 
 [node name="starbitcount" type="Label" parent="."]
 z_index = 1
-offset_left = -237.0
-offset_top = 5.0
-offset_right = -198.0
-offset_bottom = 28.0
+offset_left = -280.0
+offset_right = -241.0
+offset_bottom = 23.0
+theme = ExtResource("2_qewy6")
 text = "11"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="button1" type="Button" parent="."]
 self_modulate = Color(1, 1, 1, 0)
-offset_left = -193.0
-offset_top = -29.0
-offset_right = -140.0
-offset_bottom = 24.0
+offset_left = -226.0
+offset_top = -17.0
+offset_right = -173.0
+offset_bottom = 36.0
 theme_override_colors/font_color = Color(0, 0, 0, 0)
 theme_override_colors/icon_normal_color = Color(0, 0, 0, 0)
 theme_override_colors/icon_pressed_color = Color(0, 0, 0, 0)
@@ -364,19 +457,21 @@ theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 0)
 theme_override_colors/icon_focus_color = Color(0, 0, 0, 0)
 theme_override_colors/icon_disabled_color = Color(0, 0, 0, 0)
 metadata/_edit_group_ = true
+metadata/_edit_use_anchors_ = true
 
 [node name="slot1sprite" type="AnimatedSprite2D" parent="button1"]
 position = Vector2(26, 29)
 sprite_frames = SubResource("SpriteFrames_54gbc")
-animation = &"channeler"
+animation = &"spiland"
 
 [node name="button2" type="Button" parent="."]
 self_modulate = Color(1, 1, 1, 0)
-offset_left = -139.0
-offset_top = -27.0
-offset_right = -86.0
-offset_bottom = 26.0
+offset_left = -162.0
+offset_top = -11.0
+offset_right = -109.0
+offset_bottom = 42.0
 metadata/_edit_group_ = true
+metadata/_edit_use_anchors_ = true
 
 [node name="slot2sprite" type="AnimatedSprite2D" parent="button2"]
 position = Vector2(27, 26)
@@ -385,11 +480,12 @@ animation = &"novamite"
 
 [node name="button3" type="Button" parent="."]
 self_modulate = Color(1, 1, 1, 0)
-offset_left = -82.0
-offset_top = -27.0
-offset_right = -29.0
-offset_bottom = 26.0
+offset_left = -99.0
+offset_top = -9.0
+offset_right = -46.0
+offset_bottom = 44.0
 metadata/_edit_group_ = true
+metadata/_edit_use_anchors_ = true
 
 [node name="slot3sprite" type="AnimatedSprite2D" parent="button3"]
 position = Vector2(27, 26)
@@ -402,19 +498,25 @@ z_index = -1
 texture = ExtResource("1_7d3gb")
 
 [node name="mousefollow" type="AnimatedSprite2D" parent="."]
+position = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_g0fau")
-animation = &"shooter"
-frame_progress = 0.767718
+animation = &"spiland"
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="."]
-offset_left = -240.0
-offset_top = -22.0
-offset_right = -195.0
-offset_bottom = 23.0
+offset_left = -281.0
+offset_top = -42.0
+offset_right = -236.0
+offset_bottom = 3.0
+theme = ExtResource("2_qewy6")
 step = 0.0
 fill_mode = 4
 texture_under = ExtResource("9_yw5fy")
 texture_progress = ExtResource("10_imhpn")
+metadata/_edit_use_anchors_ = true
+
+[node name="starbit_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_x6tjy")
+volume_db = -30.0
 
 [connection signal="pressed" from="button1" to="." method="_on_button_1_pressed"]
 [connection signal="pressed" from="button2" to="." method="_on_button_2_pressed"]

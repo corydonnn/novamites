@@ -1,9 +1,12 @@
 extends Area2D
 var damage = 5
 var speed = 150
+@export var lifetime = 3
+@onready var lifetime_timer = $lifetime_timer
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	lifetime_timer.wait_time=lifetime
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -21,4 +24,8 @@ func _on_area_entered(area):
 
 
 func _on_visible_on_screen_notifier_2d_screen_exited():
+	queue_free()
+
+
+func _on_lifetime_timer_timeout():
 	queue_free()

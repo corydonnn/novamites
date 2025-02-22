@@ -1,12 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://7i54y5t3n5ps"]
+[gd_scene load_steps=10 format=3 uid="uid://7i54y5t3n5ps"]
 
 [ext_resource type="Script" path="res://playarea.gd" id="1_hg262"]
 [ext_resource type="PackedScene" uid="uid://dwbp4j5f50gen" path="res://actionbar.tscn" id="2_8a2ci"]
 [ext_resource type="PackedScene" uid="uid://dekk8efkxa2at" path="res://novamite.tscn" id="2_cu101"]
 [ext_resource type="Texture2D" uid="uid://dd6700q03hoan" path="res://sprites/vacancyplaceholder.png" id="5_42bb4"]
 [ext_resource type="Texture2D" uid="uid://bpaqh20bhx27d" path="res://sprites/tilemap.png" id="5_yiixl"]
-[ext_resource type="PackedScene" uid="uid://c5eoep1oiqsmd" path="res://mites/spiland/spiland.tscn" id="6_ekl7k"]
-[ext_resource type="PackedScene" uid="uid://542868qkgd8k" path="res://placeholderenemy.tscn" id="7_4o8be"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bk5r3"]
 texture = ExtResource("5_42bb4")
@@ -320,7 +318,7 @@ script = ExtResource("1_hg262")
 novamite = ExtResource("2_cu101")
 
 [node name="Actbarplaceholder" parent="." instance=ExtResource("2_8a2ci")]
-position = Vector2(16, -108)
+position = Vector2(-16, -126)
 
 [node name="occupancy_map" type="TileMap" parent="."]
 z_index = -2
@@ -341,28 +339,7 @@ layer_0/tile_data = PackedInt32Array(131077, 196608, 0, 65541, 196608, 0, 5, 196
 position = Vector2(16, 3)
 
 [node name="wavetimer" type="Timer" parent="."]
-wait_time = 10.0
+wait_time = 15.0
 autostart = true
-
-[node name="spiland" parent="." instance=ExtResource("6_ekl7k")]
-position = Vector2(-23, 20)
-scale = Vector2(0.78, 0.78)
-
-[node name="spiland2" parent="." instance=ExtResource("6_ekl7k")]
-position = Vector2(-25, 106)
-scale = Vector2(0.78, 0.78)
-
-[node name="spiland3" parent="." instance=ExtResource("6_ekl7k")]
-position = Vector2(-23, -69)
-scale = Vector2(0.78, 0.78)
-
-[node name="Placeholderenemy" parent="." instance=ExtResource("7_4o8be")]
-position = Vector2(205, 19)
-
-[node name="Placeholderenemy2" parent="." instance=ExtResource("7_4o8be")]
-position = Vector2(207, 105)
-
-[node name="Placeholderenemy3" parent="." instance=ExtResource("7_4o8be")]
-position = Vector2(208, -67)
 
 [connection signal="timeout" from="wavetimer" to="." method="_on_wavetimer_timeout"]

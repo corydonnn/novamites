@@ -36,6 +36,8 @@ func _process(_delta): #HORRENDOUSLY UGLY CODE i pretend i do not see it
 				mite = preload("res://glitchwurm.tscn").instantiate()
 			if Globalvars.held == 'shooter':
 				mite = preload("res://shooter_placeholder.tscn").instantiate()
+			if Globalvars.held == 'spiland':
+				mite = preload("res://mites/spiland/spiland.tscn").instantiate()
 			add_child(mite) #adds said variable as a child
 			mite.position = occupancy_map.map_to_local(tilepos)
 			occupancy_map.set_cell(0,tilepos,0, Vector2(0,0))
