@@ -168,6 +168,7 @@ horizontal_alignment = 1
 
 [connection signal="mouse_entered" from="summon" to="." method="_on_right_mouse_entered"]
 [connection signal="mouse_exited" from="summon" to="." method="_button_mouse_exited"]
+[connection signal="pressed" from="summon" to="." method="_on_summon_pressed"]
 [connection signal="mouse_entered" from="manage" to="." method="_on_top_mouse_entered"]
 [connection signal="mouse_exited" from="manage" to="." method="_on_buttons_exited"]
 [connection signal="pressed" from="manage" to="." method="_on_top_pressed"]

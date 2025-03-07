@@ -24,6 +24,7 @@ func start_gameplay():
 		titlescreen.queue_free()
 		add_child(restscreen)
 		restscreen.embark.connect(_on_embark)
+		restscreen.summon.connect(_on_summon)
 		sounds.rest_ambience.play()
 		active = false
 	
@@ -39,3 +40,6 @@ func _on_embark():
 	sounds.rest_ambience.stop()
 	add_child(playarea)
 	restscreen.visible = false
+
+func _on_summon():
+	pass

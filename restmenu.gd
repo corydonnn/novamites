@@ -5,6 +5,7 @@ extends Node2D
 @onready var marker2 = $Marker2D2
 @onready var desc = $description_label
 @onready var selectionscreen = preload("res://selection_interface.tscn").instantiate()
+@onready var summonscreen = preload("res://summoning_interface.tscn").instantiate()
 
 
 var targetpos
@@ -90,3 +91,8 @@ func _button_mouse_exited():
 signal embark
 func _on_embark_pressed():
 	embark.emit()
+
+signal summon
+func _on_summon_pressed():
+	add_child(summonscreen)
+	summonscreen.visible = true

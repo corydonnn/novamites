@@ -1,0 +1,121 @@
+[gd_scene load_steps=8 format=3 uid="uid://rcd0gc5l0aq"]
+
+[ext_resource type="Script" path="res://summoning_interface.gd" id="1_1v5vp"]
+[ext_resource type="Shader" path="res://starfield.gdshader" id="2_1f147"]
+[ext_resource type="Texture2D" uid="uid://b52iff4qn5fcd" path="res://sprites/placeholder/summoning_placeholder.png" id="3_kucwp"]
+[ext_resource type="Texture2D" uid="uid://n6ka0fggvkt4" path="res://sprites/tablets/tabletblank.png" id="4_twry4"]
+[ext_resource type="Theme" uid="uid://bmmvgk0k1x4au" path="res://basictheme.tres" id="5_ixdwh"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ab5up"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w25t3"]
+shader = ExtResource("2_1f147")
+shader_parameter/zoom = 16.0
+shader_parameter/NUM_LAYERS = 7.0
+shader_parameter/brightness1 = 1.1
+shader_parameter/brightness2 = -2.6
+shader_parameter/brightness3 = 1.2
+shader_parameter/twinkle = 1.0
+shader_parameter/star_rays = 1.0
+shader_parameter/speed = 1.0
+shader_parameter/color1 = Vector3(0, 0, 0)
+shader_parameter/color2 = Vector3(0.303, 0.388, 0.273)
+shader_parameter/color3 = Vector3(1.763, 0.938, 0.787)
+shader_parameter/color4 = Vector3(-2.397, 1.818, 1.948)
+shader_parameter/adjust_queue = Vector2(123.34, 456.821)
+
+[node name="summoning_interface" type="Control"]
+z_index = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1v5vp")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_ab5up")
+offset_top = 178.0
+offset_right = 639.0
+offset_bottom = 364.0
+color = Color(0.196196, 0.252803, 0.229099, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_w25t3")
+offset_left = -5.0
+offset_top = -1.0
+offset_right = 648.0
+offset_bottom = 179.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(360, 180)
+texture = ExtResource("3_kucwp")
+metadata/_edit_group_ = true
+
+[node name="left" type="TextureButton" parent="Sprite2D"]
+offset_left = -217.0
+offset_top = 64.0
+offset_right = -177.0
+offset_bottom = 104.0
+
+[node name="top" type="TextureButton" parent="Sprite2D"]
+offset_left = -58.0
+offset_top = -109.0
+offset_right = -18.0
+offset_bottom = -69.0
+
+[node name="center" type="TextureButton" parent="Sprite2D"]
+offset_left = -55.0
+offset_top = 72.0
+offset_right = -15.0
+offset_bottom = 112.0
+
+[node name="right" type="TextureButton" parent="Sprite2D"]
+offset_left = 128.0
+offset_top = 69.0
+offset_right = 168.0
+offset_bottom = 109.0
+
+[node name="back_button" type="TextureButton" parent="."]
+offset_left = 4.0
+offset_top = 2.0
+offset_right = 56.0
+offset_bottom = 17.0
+texture_normal = ExtResource("4_twry4")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="back_button"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = -4.0
+offset_right = 45.0
+offset_bottom = 19.0
+theme_override_font_sizes/font_size = 8
+text = "go back"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="actiontext" type="Label" parent="."]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 322.0
+offset_right = 622.0
+offset_bottom = 357.0
+theme = ExtResource("5_ixdwh")
+theme_override_font_sizes/font_size = 18
+text = "meowehfkshfkjsadhfkjhasklhdkaldhkashdaskldhaskldhaskljdhsalkdhaskljdhkajsl"
+horizontal_alignment = 1
+
+[connection signal="mouse_entered" from="Sprite2D/left" to="." method="_on_left_mouse_entered"]
+[connection signal="mouse_entered" from="Sprite2D/left" to="." method="_on_slot_mouse_entered"]
+[connection signal="mouse_entered" from="Sprite2D/top" to="." method="_on_top_mouse_entered"]
+[connection signal="mouse_entered" from="Sprite2D/top" to="." method="_on_slot_mouse_entered"]
+[connection signal="mouse_entered" from="Sprite2D/center" to="." method="_on_center_mouse_entered"]
+[connection signal="mouse_entered" from="Sprite2D/center" to="." method="_on_slot_mouse_entered"]
+[connection signal="mouse_entered" from="Sprite2D/right" to="." method="_on_right_mouse_entered"]
+[connection signal="mouse_entered" from="Sprite2D/right" to="." method="_on_slot_mouse_entered"]
+[connection signal="pressed" from="back_button" to="." method="_on_back_button_pressed"]
