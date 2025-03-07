@@ -1,10 +1,11 @@
-[gd_scene load_steps=70 format=3 uid="uid://dwbp4j5f50gen"]
+[gd_scene load_steps=77 format=3 uid="uid://dwbp4j5f50gen"]
 
 [ext_resource type="Texture2D" uid="uid://dyrdrhupgfj2" path="res://sprites/actbarplaceholder.png" id="1_7d3gb"]
 [ext_resource type="Theme" uid="uid://bmmvgk0k1x4au" path="res://basictheme.tres" id="2_qewy6"]
 [ext_resource type="Script" path="res://actionbar.gd" id="2_v8yd8"]
 [ext_resource type="Texture2D" uid="uid://c1vcb71wswkln" path="res://sprites/channelericon.png" id="3_8ri0v"]
 [ext_resource type="Texture2D" uid="uid://bbm1rsanqker3" path="res://sprites/glitchwurmicon.png" id="3_lo08i"]
+[ext_resource type="Texture2D" uid="uid://1tecbt2blbhb" path="res://sprites/bullet.png" id="3_x5y0k"]
 [ext_resource type="Texture2D" uid="uid://b8xtyti37ra6l" path="res://sprites/novamiteicon.png" id="4_qcssk"]
 [ext_resource type="Texture2D" uid="uid://ddbhucoivih6k" path="res://sprites/channelerplaceholder.png" id="5_fwnki"]
 [ext_resource type="Texture2D" uid="uid://fytdtkxil0ag" path="res://sprites/novamiteplaceholder.png" id="5_ght8b"]
@@ -14,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://dt6hqup2av0rd" path="res://sprites/gitchwurm.png" id="6_q2hyv"]
 [ext_resource type="Texture2D" uid="uid://c7n8ptddx4ic8" path="res://sprites/progempty.png" id="9_yw5fy"]
 [ext_resource type="Texture2D" uid="uid://y8w84wfysm0s" path="res://sprites/progfull.png" id="10_imhpn"]
+[ext_resource type="Texture2D" uid="uid://ck78f300a57ug" path="res://mites/amber_knight/amber_knight_test_anim.png" id="10_x8qa2"]
 [ext_resource type="Texture2D" uid="uid://sno1jvdnoorm" path="res://sprites/placeholder gun.png" id="11_v3dd4"]
 [ext_resource type="Texture2D" uid="uid://bco6qc1d8d4c1" path="res://mites/spiland/spilandanim.png" id="13_we6ga"]
 [ext_resource type="AudioStream" uid="uid://baolv6k0o4ctb" path="res://sfx/wah.mp3" id="17_x6tjy"]
@@ -40,6 +42,14 @@ region = Rect2(0, 0, 48, 48)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_54gbc"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_x5y0k")
+}],
+"loop": true,
+"name": &"amber_knight",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_mthke")
@@ -80,6 +90,26 @@ animations = [{
 "name": &"spiland",
 "speed": 5.0
 }]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tyl07"]
+atlas = ExtResource("10_x8qa2")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b84fh"]
+atlas = ExtResource("10_x8qa2")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_20q8q"]
+atlas = ExtResource("10_x8qa2")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mfuyj"]
+atlas = ExtResource("10_x8qa2")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k0xwx"]
+atlas = ExtResource("10_x8qa2")
+region = Rect2(192, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1bsgw"]
 atlas = ExtResource("5_fwnki")
@@ -263,6 +293,26 @@ region = Rect2(1050, 0, 50, 50)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g0fau"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tyl07")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b84fh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_20q8q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mfuyj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k0xwx")
+}],
+"loop": true,
+"name": &"amber_knight",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_1bsgw")
@@ -462,7 +512,7 @@ metadata/_edit_use_anchors_ = true
 [node name="slot1sprite" type="AnimatedSprite2D" parent="button1"]
 position = Vector2(26, 29)
 sprite_frames = SubResource("SpriteFrames_54gbc")
-animation = &"spiland"
+animation = &"amber_knight"
 
 [node name="button2" type="Button" parent="."]
 self_modulate = Color(1, 1, 1, 0)
@@ -500,7 +550,7 @@ texture = ExtResource("1_7d3gb")
 [node name="mousefollow" type="AnimatedSprite2D" parent="."]
 position = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_g0fau")
-animation = &"spiland"
+animation = &"amber_knight"
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="."]
 offset_left = -281.0

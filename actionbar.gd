@@ -10,7 +10,7 @@ var starbitwaittime
 #debug
 var slot1 = 'glitchwurm'
 var slot2 = 'spiland'
-var slot3 = 'shooter'
+var slot3 = 'amber_knight'
 func _ready():
 	starbitwaittime = starbitwaittimeconst - Globalvars.channelers*.1
 	mousefollow.play(Globalvars.held)
@@ -51,7 +51,7 @@ func _on_button_2_pressed():
 
 
 func _on_button_3_pressed():
-	if Globalvars.starbits >= int(Mitedata.data[3]['cost']):
+	if Globalvars.starbits >= int(Mitedata.data[5]['cost']):
 		Globalvars.held = slot3
 		mousefollow.play(Globalvars.held)
 

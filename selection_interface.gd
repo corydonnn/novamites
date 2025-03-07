@@ -21,10 +21,14 @@ func _process(delta):
 var attribute_data : Dictionary = {
 	"placeholder" = [3,3,3,3,3],
 	"glitchwurm" = [1,3,4,2,5],
+	"spiland" = [4, 3, 1, 3, 4],
+	"amber_knight" = [4, 4, 4, 2, 2],
 }
 var id_linkage = {
 	"placeholder" = 0,
 	"glitchwurm" = 1,
+	"spiland" = 2,
+	"amber_knight" = 3,
 }
 var text_data = [
 	{"id" = "placeholder",
@@ -33,6 +37,12 @@ var text_data = [
 	},
 	{"name" = "Glitchwurm",
 	"body_text" = "Glitchwurms have been perceived as holograms, living computer programs, or other things that cement them as the personification of the machine age. They are so intelligent that they can manipulate the “code” of reality around them, however this comes with significant physical toll, causing Glitchwurms to regularly blink in and out of existence.",
+	},
+	{"id" = "spliland",
+	"name" = "Spiland",
+	"body_text" = "Brought to life through the intensity a storm combined with the tears of a grieving selkie, These mountain sized golems are in perpetual anguish. Luckily, there is no suffering involved with this. They cry cathartic, healing tears.",},
+	{"name" = "Amber Knight",
+	"body_text" = "The Amber Knight is imbued with the spirits of nature, having incredible sap production capabilities that it uses to encase enemies. This sap hardens into a resin at unnatural speeds, flash cooking anything inside. The sap supposedly tastes of honey and cedar.",
 	},
 ]
 func _on_tablet_clicked(novamite):

@@ -1,10 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://hlvafpbvjkfu"]
+[gd_scene load_steps=13 format=3 uid="uid://hlvafpbvjkfu"]
 
 [ext_resource type="Script" path="res://selection_interface.gd" id="1_mhbqu"]
 [ext_resource type="Texture2D" uid="uid://utcii52nlky4" path="res://sprites/novamiteselectionbg.png" id="2_aeylw"]
 [ext_resource type="Texture2D" uid="uid://cmygjtfehqroi" path="res://sprites/portraits/glitchwurmportrait.png" id="3_85xyn"]
+[ext_resource type="Texture2D" uid="uid://pbhjbulvnljd" path="res://sprites/portraits/portrait_amber_knight.png" id="3_vbvwh"]
 [ext_resource type="PackedScene" uid="uid://73fk2t1l6tqi" path="res://tablet.tscn" id="4_1eeeb"]
 [ext_resource type="Texture2D" uid="uid://bbg5bewbua4xi" path="res://sprites/portraits/plceholderportrait.png" id="4_36c5l"]
+[ext_resource type="Texture2D" uid="uid://drntj0rynbmkf" path="res://sprites/portraits/spilandportrait.jpg" id="5_3qsas"]
 [ext_resource type="PackedScene" uid="uid://1n6nkvsure4q" path="res://attribute_pentagon.tscn" id="6_yon85"]
 [ext_resource type="FontFile" uid="uid://cr43nr20laxrk" path="res://Cairo-VariableFont_slnt,wght.ttf" id="7_8vpei"]
 [ext_resource type="Texture2D" uid="uid://n6ka0fggvkt4" path="res://sprites/tablets/tabletblank.png" id="7_h3ips"]
@@ -12,6 +14,14 @@
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xer70"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_vbvwh")
+}],
+"loop": true,
+"name": &"amber_knight",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("3_85xyn")
@@ -26,6 +36,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"placeholder",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_3qsas")
+}],
+"loop": true,
+"name": &"spiland",
 "speed": 5.0
 }]
 
@@ -55,6 +73,16 @@ scale = Vector2(0.3, 0.3)
 position = Vector2(357, 43)
 scale = Vector2(0.3, 0.3)
 novamite = "glitchwurm"
+
+[node name="tablet3" parent="." instance=ExtResource("4_1eeeb")]
+position = Vector2(406, 43)
+scale = Vector2(0.3, 0.3)
+novamite = "spiland"
+
+[node name="tablet4" parent="." instance=ExtResource("4_1eeeb")]
+position = Vector2(453, 43)
+scale = Vector2(0.3, 0.3)
+novamite = "amber_knight"
 
 [node name="selected_tablet" parent="." instance=ExtResource("4_1eeeb")]
 position = Vector2(225, 265)

@@ -6,7 +6,7 @@ var camerapos : Vector2
 var lane1spawnpos
 var tilesize = 45
 #debug vars
-var debughealthllabels : bool = false
+var debughealthllabels : bool = true
 var cancheatstarbits : bool = true
 
 #settings vars

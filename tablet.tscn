@@ -1,10 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://73fk2t1l6tqi"]
+[gd_scene load_steps=10 format=3 uid="uid://73fk2t1l6tqi"]
 
 [ext_resource type="Texture2D" uid="uid://b734v0adsrv3d" path="res://sprites/tablets/tabletglitchwurm.png" id="1_gf8ds"]
 [ext_resource type="Script" path="res://tablet.gd" id="1_hhekd"]
+[ext_resource type="Texture2D" uid="uid://doj8tdo74x5sd" path="res://sprites/tablets/tablet_amber_knight.png" id="2_2olbb"]
 [ext_resource type="Texture2D" uid="uid://n6ka0fggvkt4" path="res://sprites/tablets/tabletblank.png" id="3_k8x30"]
 [ext_resource type="Texture2D" uid="uid://bqi60bv3dj85e" path="res://sprites/tablets/tablet_pressed.png" id="4_fkvwa"]
 [ext_resource type="AudioStream" uid="uid://dih8bs0gbrfl0" path="res://sfx/stone_reverse.mp3" id="5_lcdvx"]
+[ext_resource type="Texture2D" uid="uid://d07d3bcqi8jve" path="res://sprites/tablets/tablet_spiland.png" id="5_uklyu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s2f2o"]
 atlas = ExtResource("1_gf8ds")
@@ -12,6 +14,14 @@ region = Rect2(0, 0, 128, 164)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_u15fd"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2olbb")
+}],
+"loop": true,
+"name": &"amber_knight",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_s2f2o")
@@ -35,6 +45,14 @@ animations = [{
 "loop": true,
 "name": &"pressed",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_uklyu")
+}],
+"loop": true,
+"name": &"spiland",
+"speed": 5.0
 }]
 
 [node name="tablet" type="Node2D"]
@@ -42,7 +60,7 @@ script = ExtResource("1_hhekd")
 
 [node name="sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_u15fd")
-animation = &"pressed"
+animation = &"amber_knight"
 
 [node name="button" type="TextureButton" parent="."]
 offset_left = -64.0

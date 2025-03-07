@@ -16,4 +16,7 @@ var data = [
 	{"name" : "spiland",
 		"cost" : "6",
 		"health" : "100"},
+	{"name" : "amber_knight",
+		"cost" : "5",
+		"health" : "300"},
 ]
