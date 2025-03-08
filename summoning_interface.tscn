@@ -38,6 +38,7 @@ script = ExtResource("1_1v5vp")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_ab5up")
+layout_mode = 0
 offset_top = 178.0
 offset_right = 639.0
 offset_bottom = 364.0
@@ -45,6 +46,7 @@ color = Color(0.196196, 0.252803, 0.229099, 1)
 
 [node name="ColorRect2" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_w25t3")
+layout_mode = 0
 offset_left = -5.0
 offset_top = -1.0
 offset_right = 648.0
@@ -80,6 +82,7 @@ offset_right = 168.0
 offset_bottom = 109.0
 
 [node name="back_button" type="TextureButton" parent="."]
+layout_mode = 0
 offset_left = 4.0
 offset_top = 2.0
 offset_right = 56.0
