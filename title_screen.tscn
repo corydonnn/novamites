@@ -3,24 +3,22 @@
 [ext_resource type="Script" path="res://title_screen.gd" id="1_tvscq"]
 [ext_resource type="Texture2D" uid="uid://bucoumx4its6d" path="res://sprites/lmao.png" id="2_ik5ao"]
 [ext_resource type="Texture2D" uid="uid://b1ifctmux7t4p" path="res://sprites/lmao2.png" id="3_5l5uf"]
-[ext_resource type="Shader" path="res://starfield.gdshader" id="4_1ksm1"]
+[ext_resource type="Shader" path="res://space.gdshader" id="4_a20jj"]
 [ext_resource type="Texture2D" uid="uid://cnqe04tx6esss" path="res://sprites/placeholder logo.png" id="5_1kumn"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_nlinl"]
-shader = ExtResource("4_1ksm1")
-shader_parameter/zoom = 1.0
-shader_parameter/NUM_LAYERS = 7.0
-shader_parameter/brightness1 = 1.0
-shader_parameter/brightness2 = 0.5
-shader_parameter/brightness3 = 0.5
-shader_parameter/twinkle = 1.0
-shader_parameter/star_rays = 1.0
-shader_parameter/speed = 1.0
-shader_parameter/color1 = Vector3(0.498, 0.588, 1.128)
-shader_parameter/color2 = Vector3(0.303, 0.388, 0.273)
-shader_parameter/color3 = Vector3(1.763, 0.938, 0.787)
-shader_parameter/color4 = Vector3(-2.982, 1.818, 1.948)
-shader_parameter/adjust_queue = Vector2(123.34, 456.821)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_femt5"]
+shader = ExtResource("4_a20jj")
+shader_parameter/dimensions = Vector2(1024, 600)
+shader_parameter/small_stars = 50.0
+shader_parameter/small_stars_far_size = 0.5
+shader_parameter/small_stars_near_size = 1.0
+shader_parameter/large_stars = 8.0
+shader_parameter/large_stars_far_size = 0.5
+shader_parameter/large_stars_near_size = 1.0
+shader_parameter/far_stars_color = Color(0.941176, 0, 0, 1)
+shader_parameter/near_stars_color = Color(0, 0, 1, 1)
+shader_parameter/base_scroll_speed = 0.01
+shader_parameter/additional_scroll_speed = 0.001
 
 [node name="title_screen" type="CanvasLayer"]
 script = ExtResource("1_tvscq")
@@ -37,20 +35,31 @@ stretch_mode = 0
 
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = -1
-material = SubResource("ShaderMaterial_nlinl")
-offset_left = -10.0
-offset_top = -10.0
-offset_right = 652.0
-offset_bottom = 377.0
+material = SubResource("ShaderMaterial_femt5")
+offset_left = -14.0
+offset_top = -21.0
+offset_right = 677.0
+offset_bottom = 366.0
 mouse_filter = 2
-metadata/_edit_lock_ = true
+color = Color(1, 1, 0, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-z_index = -1
+z_index = 1
 position = Vector2(129, 109)
 rotation = -0.523599
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("5_1kumn")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 174.0
+offset_top = 214.0
+offset_right = 592.0
+offset_bottom = 288.0
+theme_override_colors/font_color = Color(0, 1, 0.00392157, 1)
+theme_override_colors/font_outline_color = Color(0.932984, 1.53056e-05, 0.626447, 1)
+theme_override_constants/outline_size = 14
+theme_override_font_sizes/font_size = 30
+text = "please fix the title screen thx"
 
 [connection signal="mouse_entered" from="playbutton" to="." method="_on_playbutton_mouse_entered"]
 [connection signal="pressed" from="playbutton" to="." method="_on_playbutton_pressed"]
